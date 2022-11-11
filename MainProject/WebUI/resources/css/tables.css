@@ -1,0 +1,62 @@
+/* Texto da tabela */
+
+.theme-aimms .tag-table {
+    font-family: Calibri,Roboto,Arial,Helvetica,sans-serif;
+}
+/* Indices das tabelas */
+.theme-aimms .tag-table .rowheader-viewport .cell, .tag-table .colheader-viewport .cell{
+    background-color: #edfaf8;
+    color: #354E8A;
+    font-family: Calibri,Roboto,Arial,Helvetica,sans-serif;
+    border: none;
+    text-align: center;
+}
+
+/* Título dos cabeçalhos */   
+.theme-aimms .tag-table .titleheader-viewport .tile {
+    background-color: #354E8A;
+    color: #edfaf8;
+    font-weight: bold;
+    font-family: Calibri,Roboto,Arial,Helvetica,sans-serif;
+    border: none;
+}
+
+/*Cor da celula nao read only (EDITAVEL)*/
+.theme-aimms .tag-table .grid-viewport .cell:not(.flag-readOnly),
+html.theme-aimms:not(.touch) .tag-table .grid-viewport .cell:not(.flag-readOnly) {
+    background-color: #ffffff;
+    color: #354E8A;
+}
+
+/*Cor da celula read only*/
+.theme-aimms .cell:not(.flag-editable) .string-cell-editor-contents[disabled] {
+    color: #354E8A;
+}
+/* Célula selecionada */
+.theme-aimms .tag-table.focused .focus-cell{
+    background-color: #eb5d2e1a;
+    box-shadow: 0 0 0 1px #edfaf8 inset;
+}
+/* Cabeçalho da célula senecionada */
+.theme-aimms .tag-table.focused .cell.focused{
+    background-color: #767dab;
+    color: #edfaf8;
+}
+/* 
+
+html.theme-aimms .grid-table td.grid.threshold-high {
+	background:#28B34B;
+}
+
+html.theme-aimms .grid-table td.grid.threshold-low {
+	background:#EB175D;
+}
+
+
+html.theme-aimms:not(.touch) .grid-table tr:hover, html:not(.touch) .grid-table col.hover {
+    background:#eee;
+}
+html.theme-aimms:not(.touch) .grid-table td:hover{
+    background:#000;
+    color:#fff;
+} */

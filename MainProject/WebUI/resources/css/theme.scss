@@ -1,0 +1,195 @@
+$primary-color: #354e8a;
+$secondary-color: #A0A1A4;
+
+// Aimms theme
+html.theme-aimms {
+    body {
+        background:url(img/default_background.png)left 750px, #efefef url(img/default_background.png) top left;
+        box-shadow: inset 0 0 10em rgba(0, 0, 0, 0.3);
+        height:auto;
+        min-height:100%;
+    }
+    header.tag-application .app-name{
+        margin-top: 12px;
+        vertical-align: middle;
+        font-size: 16px;
+    }
+    header h1 .pages .app-name:before {
+        content: ' ';
+        background: url(img/default_icon.png) no-repeat center/contain;
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-right: 7px;
+        margin-top: -15px; 
+        transform: translateY(1px); 
+      }
+
+    .aimms-widget {
+        > .ui-button {
+            background-color: $primary-color;
+            cursor: pointer;
+            color: #fff;
+            border: none;
+            border-right:5px solid #fff;
+
+            &:hover {
+                background-color: $secondary-color;
+                border-right:5px solid #000;
+            }
+        }
+    }
+
+    .tag-download, .tag-upload {
+        .right-box {
+            background-color: $primary-color;
+        }
+    }
+
+}
+
+
+
+// Workflow
+.workflow-panel {
+    .step-item.current {
+        box-shadow: inset 5px 0 0 $primary-color;
+        background: #e1e2e6;
+    }
+
+    .step-item.active.complete {
+        // border: 1px solid #354e8a;
+        color: $primary-color;
+        background-color: #fff;
+        
+        .title{
+            color: $primary-color;
+        }
+
+        .icon {
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            background-color: #fff;
+        }
+
+        .icon:after {
+            background: #017e52;
+        }
+    }
+
+    .step-item.active.incomplete {
+        .title {
+            color: $primary-color;
+        }
+
+        .icon {
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            background-color: #fff;
+        }
+    }
+}
+
+// Standard Color Pallet
+.annotation-Mod19Ord1, .annotation-Ord1, .Mod19Ord1, .Ord1 {
+    background: #2b2b28;
+    fill: #2b2b28;
+    stroke: #2b2b28;
+}
+.annotation-Mod19Ord2, .annotation-Ord2, .Mod19Ord2, .Ord2 {
+    background: #775f0f;
+    fill: #775f0f;
+    stroke: #775f0f;
+}
+.annotation-Mod19Ord3, .annotation-Ord3, .Mod19Ord3, .Ord3 {
+    background: #e27f3c;
+    fill: #e27f3c;
+    stroke: #e27f3c;
+}
+.annotation-Mod19Ord4, .annotation-Ord4, .Mod19Ord4, .Ord4 {
+    background: #e25353;
+    fill: #e25353;
+    stroke: #e25353;
+}
+.annotation-Mod19Ord5, .annotation-Ord5, .Mod19Ord5, .Ord5 {
+    background: #30631d;
+    fill: #30631d;
+    stroke: #30631d;
+}
+.annotation-Mod19Ord6, .annotation-Ord6, .Mod19Ord6, .Ord6 {
+    background: #646966;
+    fill: #646966;
+    stroke: #646966;
+}
+.annotation-Mod19Ord7, .annotation-Ord7, .Mod19Ord7, .Ord7 {
+    background: #320606;
+    fill: #320606;
+    stroke: #320606;
+}
+.annotation-Mod19Ord8, .annotation-Ord8, .Mod19Ord8, .Ord8 {
+    background: #de7f1b;
+    fill: #de7f1b;
+    stroke: #de7f1b;
+}
+.annotation-Mod19Ord9, .annotation-Ord9, .Mod19Ord9, .Ord9 {
+    background: #7d5afa;
+    fill: #7d5afa;
+    stroke: #7d5afa;
+}
+.annotation-Mod19Ord10, .annotation-Ord10, .Mod19Ord10, .Ord10 {
+    background: #6f2f04;
+    fill: #6f2f04;
+	stroke: #6f2f04;
+}
+.annotation-Mod19Ord11, .annotation-Ord11, .Mod19Ord11, .Ord11 {
+    background: #2b2b28;
+    fill: #2b2b28;
+    stroke: #2b2b28;
+}
+.annotation-Mod19Ord12, .annotation-Ord12, .Mod19Ord12, .Ord12 {
+    background: #775f0f;
+    fill: #775f0f;
+    stroke: #775f0f;
+}
+.annotation-Mod19Ord13, .annotation-Ord13, .Mod19Ord13, .Ord13 {
+    background: #e3b04b;
+    fill: #e3b04b;
+    stroke: #e3b04b;
+}
+.annotation-Mod19Ord14, .annotation-Ord14, .Mod19Ord14, .Ord14 {
+    background: #f1d6ab;
+    fill: #f1d6ab;
+    stroke: #f1d6ab;
+}
+.annotation-Mod19Ord15, .annotation-Ord15, .Mod19Ord15, .Ord15 {
+    background: #f9e989;
+    fill: #f9e989;
+    stroke: #f9e989;
+}
+.annotation-Mod19Ord16, .annotation-Ord16, .Mod19Ord16, .Ord16 {
+    background: #646966;
+    fill: #646966;
+    stroke: #646966;
+}
+.annotation-Mod19Ord17, .annotation-Ord17, .Mod19Ord17, .Ord17 {
+    background: #320606;
+    fill: #320606;
+    stroke: #320606;
+}
+.annotation-Mod19Ord18, .annotation-Ord18, .Mod19Ord18, .Ord18 {
+    background: #de7f1b;
+    fill: #de7f1b;
+    stroke: #de7f1b;
+}
+.annotation-Mod19Ord19, .annotation-Ord19, .Mod19Ord19, .Ord19 {
+    background: #ffdbac;
+    fill: #ffdbac;
+    stroke: #ffdbac;
+}
+.annotation-Mod19Ord20, .annotation-Ord20, .Mod19Ord20, .Ord20 {
+    background: #6f2f04;
+    fill: #6f2f04;
+	stroke: #6f2f04;
+}
+
+

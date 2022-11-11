@@ -1,0 +1,17 @@
+alphabet_size
+sc_size sf_size
+target_size
+kc kf
+alphabet_symbol(1)
+alphabet_symbol(2)
+...
+alphabet_symbol(alphabet_size)
+sc_string(1)
+sc_string(2)
+...
+sc_string(sc_size)
+sf_string(1)
+sf_string(2)
+...
+sf_string(sf_size)
+empty_line

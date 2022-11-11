@@ -1,0 +1,74 @@
+
+/* Selected state */
+.annotation-bar_blue.chart-item:active,
+.annotation-bar_blue.chart-item.is-active {
+   /* fill changes  */
+   fill: yellow;
+   fill-opacity: .5 !important;
+   width: 10%;
+   /* stroke changes  */
+   stroke: aqua !important;
+   stroke-width: 5 !important;
+   stroke-dasharray: 5;
+}
+
+
+/* Pie Chart */
+
+/* Default state */
+.annotation-pie_blue{
+	/* fill changes */
+	fill: Blue;
+    fill-opacity: .3 !important;
+	/* stroke changes */
+	stroke: aqua !important;
+    stroke-width: 4 !important;
+    stroke-dasharray: 5;
+}
+
+.piechart .wedge .label {
+    font-size: 12px;
+    stroke-width: 0;
+    fill-opacity: 1;
+    stroke: #000;
+    fill: #ddd;
+    text-anchor: middle;
+    alignment-baseline: middle;
+}
+
+/* Bar chart */
+.leaf .text {
+    text-align: left;
+    cursor: default;
+    white-space: nowrap;
+    font-size: 110%;
+    stroke: #000;
+}
+
+.theme-aimms .chart.barlinechart .x-axis text {
+    fill: #000;
+    /* width: 130%; */
+    font-size: 110%;
+}
+
+
+/* Gantt chart */
+
+.bar.job.annotation-Ord1 {
+	fill: red;
+}
+
+.bar.job.annotation-Ord2 {
+	fill: blue;
+}
+
+.bar.job.annotation-Ord3 {
+	fill: black;
+}
+
+.tag-ganttchart .label {
+    fill: white;
+    font-size: 110%;
+    color: red;
+    
+}

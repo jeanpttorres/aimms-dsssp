@@ -1,0 +1,17 @@
+TY  - JOUR
+AU  - Torres, Jean P. Tremeschin
+AU  - Hoshino, Edna A.
+PY  - 2022
+DA  - 2022/09/01
+TI  - LP-based heuristics for the distinguishing string and substring selection problems
+JO  - Annals of Operations Research
+SP  - 1205
+EP  - 1234
+VL  - 316
+IS  - 2
+AB  - This work aims to evaluate and propose matheuristics for the Distinguishing String Selection Problem (DSSP) and the Distinguishing Substring Selection Problems (DSSSP). Heuristics based on mathematical programming have already been proposed for String Selection problems in the literature and we are interested in adopting and testing different approaches for those problems. We proposed two matheuristics for both the DSSP and DSSSP by combining the Variable Neighbourhood Search (VNS) metaheuristic and mathematical programming. We compare the linear relaxation, lower bounds found through the branch-and-bound technique, and the matheuristics in three different groups of instances. Computational experiments show that the Basic Core Problem Algorithm (BCPA) finds overall better results for the DSSP. However, it was unable to provide any solutions for some hard DSSSP instances in a reasonable time limit. The two matheuristics based on the VNS have their own niche related to the different groups of instances. They found good solutions for the DSSSP while the BCPA failed. All the obtained data are available in our repository.
+SN  - 1572-9338
+UR  - https://doi.org/10.1007/s10479-021-04138-5
+DO  - 10.1007/s10479-021-04138-5
+ID  - Torres2022
+ER  - 

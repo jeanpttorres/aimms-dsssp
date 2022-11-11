@@ -1,0 +1,2545 @@
+{
+  "version": "4.67.0",
+  "application": {
+    "aimms.widget.type": {
+      "literal": "application"
+    },
+    "browsername": {
+      "aimms": {
+        "contents": [
+          "webui::ClientBrowserName"
+        ]
+      }
+    },
+    "browsertimezone": {
+      "aimms": {
+        "contents": [
+          "webui::BrowserTimeZone"
+        ]
+      }
+    },
+    "defaults.upload.download.controls.show": {
+      "literal": true
+    },
+    "ignoredst": {
+      "aimms": {
+        "contents": [
+          "webui::IgnoreDST"
+        ]
+      }
+    },
+    "menu.hidden": {
+      "literal": true
+    },
+    "pages": {
+      "literal": {
+        "name": "root",
+        "slug": "root",
+        "children": [
+          {
+            "name": "Main Project",
+            "slug": "main_project",
+            "children": [
+              {
+                "name": "home",
+                "slug": "home",
+                "type": "pagev2-grid",
+                "children": []
+              },
+              {
+                "name": "input",
+                "type": "pagev2-grid",
+                "slug": "input",
+                "children": []
+              },
+              {
+                "name": "output",
+                "type": "pagev2-grid",
+                "slug": "output",
+                "children": []
+              },
+              {
+                "name": "optimization",
+                "type": "pagev2-grid",
+                "slug": "optimization",
+                "children": []
+              },
+              {
+                "name": "logs",
+                "type": "pagev2-grid",
+                "slug": "logs",
+                "children": []
+              },
+              {
+                "name": "playground",
+                "type": "pagev2-grid",
+                "slug": "playground",
+                "children": []
+              },
+              {
+                "name": "dialog",
+                "type": "pagev2-grid-dialog",
+                "slug": "dialog",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "theme.classic": {
+      "literal": false
+    },
+    "timezone": {
+      "aimms": {
+        "contents": [
+          "webui::DisplayTimeZone"
+        ]
+      }
+    },
+    "timezone.dst.readonly": {
+      "aimms": {
+        "contents": [
+          "webui::DefaultDSTSettingForDisplayTimeZone"
+        ]
+      }
+    },
+    "workflows.configuration": {
+      "aimms": {
+        "contents": [
+          "WorkflowSteps"
+        ],
+        "slices": [
+          {
+            "identifier": "WorkflowSteps",
+            "slice": [
+              {
+                "index": "webui::indexWorkflowOrder",
+                "type": "free",
+                "value": "webui::indexWorkflowOrder"
+              },
+              {
+                "index": "webui::indexNoOfPages",
+                "type": "free",
+                "value": "webui::indexNoOfPages"
+              },
+              {
+                "index": "webui::indexWorkflowPageSpec",
+                "type": "free",
+                "value": "webui::indexWorkflowPageSpec"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "workflows.information": {
+      "aimms": {
+        "contents": [
+          "Workflows"
+        ],
+        "slices": [
+          {
+            "identifier": "Workflows",
+            "slice": [
+              {
+                "index": "webui::indexWorkflowOrder",
+                "type": "free",
+                "value": "webui::indexWorkflowOrder"
+              },
+              {
+                "index": "webui::indexWorkflowSpec",
+                "type": "free",
+                "value": "webui::indexWorkflowSpec"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "layouts/custom_3f496af1-08fc-48a8-8d76-c6f401354324": {
+    "definition": {
+      "literal": {
+        "componentName": "Grid",
+        "props": {
+          "gridTemplateColumns": "1fr 1fr 1fr 1fr",
+          "gridTemplateRows": "90% 10%",
+          "gridTemplateAreas": "\"area-a area-a area-a area-a\" \"area-b area-c area-d area-e\""
+        },
+        "items": [
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a",
+              "name": "Area A",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b",
+              "name": "Area B",
+              "gridAutoFlow": "row"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-c",
+              "name": "Area C",
+              "gridAutoFlow": "row"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-d",
+              "name": "Area D",
+              "gridAutoFlow": "row"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-e",
+              "name": "Area E",
+              "gridAutoFlow": "row"
+            }
+          }
+        ]
+      }
+    },
+    "displayName": {
+      "literal": "Home"
+    }
+  },
+  "layouts/custom_46380aab-3878-4499-97a4-4819ee2757f7": {
+    "definition": {
+      "literal": {
+        "componentName": "Grid",
+        "props": {
+          "gridTemplateColumns": "33% 33% 33%",
+          "gridTemplateRows": "5% 45% 5% 45% ",
+          "gridTemplateAreas": "\"area-a area-b area-c\" \"area-a2 area-b2 area-c2\" \"area-a3 area-b2 area-c2\" \"area-a4 area-b2 area-c2\""
+        },
+        "items": [
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a",
+              "name": "Area A",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a2",
+              "name": "Area A2",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a3",
+              "name": "Area A3",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a4",
+              "name": "Area A4",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b",
+              "name": "Area B",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b2",
+              "name": "Area B2",
+              "gridAutoFlow": "row"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-c",
+              "name": "Area C",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-c2",
+              "name": "Area C2",
+              "gridAutoFlow": "row"
+            }
+          }
+        ]
+      }
+    },
+    "displayName": {
+      "literal": "Optimization"
+    }
+  },
+  "layouts/custom_96326418-1942-4a83-aac0-7ecb59169860": {
+    "definition": {
+      "literal": {
+        "componentName": "Grid",
+        "props": {
+          "gridTemplateColumns": "1fr",
+          "gridTemplateRows": "5% 5% 5% 20% 70% 70%",
+          "gridTemplateAreas": "\"area-a\" \"area-a2\" \"area-a3\" \"area-a4\" \"area-b\" \"area-c\""
+        },
+        "items": [
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a",
+              "name": "Area A",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a2",
+              "name": "Area A2",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a3",
+              "name": "Area A3",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a4",
+              "name": "Area A4",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b",
+              "name": "Area B",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-c",
+              "name": "Area C",
+              "gridAutoFlow": "column"
+            }
+          }
+        ]
+      }
+    },
+    "displayName": {
+      "literal": "Output"
+    }
+  },
+  "layouts/custom_a205c46f-aee1-4067-9957-9beb7b7a733c": {
+    "definition": {
+      "literal": {
+        "componentName": "Grid",
+        "props": {
+          "gridTemplateColumns": "75% 25%",
+          "gridTemplateRows": "5% 5% 5% 5% 60% 5% 40% 40%",
+          "gridTemplateAreas": "\"area area\" \"area-a area-a2\" \"area-b area-b2\" \"area-c area-c\" \"area-d area-d\" \"area-e area-e\" \"area-f area-f\" \"area-g area-g\""
+        },
+        "items": [
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area",
+              "name": "Area",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a",
+              "name": "Area A",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a2",
+              "name": "Area A2",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b",
+              "name": "Area B",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b2",
+              "name": "Area B2",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-c",
+              "name": "Area C",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-d",
+              "name": "Area D",
+              "gridAutoFlow": "row"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-e",
+              "name": "Area E",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-f",
+              "name": "Area F",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-g",
+              "name": "Area G",
+              "gridAutoFlow": "column"
+            }
+          }
+        ]
+      }
+    },
+    "displayName": {
+      "literal": "Input"
+    }
+  },
+  "layouts/custom_dbcf3812-41dd-4792-b892-2713e183a894": {
+    "definition": {
+      "literal": {
+        "componentName": "Grid",
+        "props": {
+          "gridTemplateColumns": "1fr",
+          "gridTemplateRows": "5% 5% 5% 20% 70% 70%",
+          "gridTemplateAreas": "\"area-a\" \"area-a2\" \"area-a3\" \"area-a4\" \"area-b\" \"area-c\""
+        },
+        "items": [
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a",
+              "name": "Area A",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a2",
+              "name": "Area A2",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a3",
+              "name": "Area A3",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a4",
+              "name": "Area A4",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b",
+              "name": "Area B",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-c",
+              "name": "Area C",
+              "gridAutoFlow": "column"
+            }
+          }
+        ]
+      }
+    },
+    "displayName": {
+      "literal": "Playground"
+    }
+  },
+  "pages/dialog": {
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "title error",
+          "gridArea": "area-a",
+          "dndId": "area-atitle error1"
+        },
+        {
+          "widgetUri": "error",
+          "gridArea": "area-a",
+          "dndId": "area-aerror0"
+        }
+      ]
+    },
+    "maxcolumns": {
+      "literal": 4
+    },
+    "maxrows": {
+      "literal": 1
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "error",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "title error",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    },
+    "aimms.widget.type": {
+      "literal": "pagev2-grid-dialog"
+    }
+  },
+  "pages/home": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "banner-lexa",
+          "gridArea": "area-a",
+          "dndId": "area-abanner-lexa0"
+        },
+        {
+          "widgetUri": "upload_case",
+          "gridArea": "area-b",
+          "dndId": "area-bupload_case1"
+        },
+        {
+          "widgetUri": "download_case",
+          "gridArea": "area-c",
+          "dndId": "area-cdownload_case2"
+        },
+        {
+          "widgetUri": "user_manual",
+          "gridArea": "area-d",
+          "dndId": "area-duser_manual3"
+        },
+        {
+          "widgetUri": "How to Cite",
+          "gridArea": "area-e",
+          "dndId": "Unassigned widgetsHow to Cite"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "custom_3f496af1-08fc-48a8-8d76-c6f401354324"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "banner-lexa",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "upload_case",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "download_case",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "user_manual",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "How to Cite",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "pages/input": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "tbl_sf",
+          "gridArea": "area-g",
+          "dndId": "area-gtbl_sf0"
+        },
+        {
+          "widgetUri": "tbl_sc",
+          "gridArea": "area-f",
+          "dndId": "area-ftbl_sc1"
+        },
+        {
+          "widgetUri": "download_xlsx",
+          "gridArea": "area-b2",
+          "dndId": "area-b2download_xlsx4"
+        },
+        {
+          "widgetUri": "download_txt",
+          "gridArea": "area-a2",
+          "dndId": "area-a2download_txt5"
+        },
+        {
+          "widgetUri": "upload_txt",
+          "gridArea": "area-a",
+          "dndId": "area-aupload_txt6"
+        },
+        {
+          "widgetUri": "upload_xlsx",
+          "gridArea": "area-b",
+          "dndId": "area-bupload_xlsx7"
+        },
+        {
+          "widgetUri": "importar_de_arquivo",
+          "gridArea": "area",
+          "dndId": "areaimportar_de_arquivo8"
+        },
+        {
+          "widgetUri": "general_parameters",
+          "gridArea": "area-c",
+          "dndId": "area-cgeneral_parameters9"
+        },
+        {
+          "widgetUri": "sets",
+          "gridArea": "area-e",
+          "dndId": "area-esets10"
+        },
+        {
+          "widgetUri": "scl_parameters",
+          "gridArea": "area-d",
+          "dndId": "area-dscl_parameters2"
+        },
+        {
+          "widgetUri": "target_string",
+          "gridArea": "area-d",
+          "dndId": "area-dtarget_string3"
+        },
+        {
+          "widgetUri": "alphabet",
+          "gridArea": "area-d",
+          "dndId": "Unassigned widgetsalphabet"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "custom_a205c46f-aee1-4067-9957-9beb7b7a733c"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "tbl_sc",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "tbl_sf",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "scl_parameters",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "upload_txt",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "download_txt",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "upload_xlsx",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "download_xlsx",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "importar_de_arquivo",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "general_parameters",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "target_string",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "sets",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "alphabet",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "pages/optimization": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "Solver Outputs",
+          "gridArea": "area-c2",
+          "dndId": "area-c2Solver Outputs0"
+        },
+        {
+          "widgetUri": "problem options",
+          "gridArea": "area-c2",
+          "dndId": "area-c2problem options1"
+        },
+        {
+          "widgetUri": "Strategies",
+          "gridArea": "area-a4",
+          "dndId": "area-a4Strategies2"
+        },
+        {
+          "widgetUri": "Select the Strategy",
+          "gridArea": "area-a3",
+          "dndId": "area-a3Select the Strategy3"
+        },
+        {
+          "widgetUri": "problems",
+          "gridArea": "area-a2",
+          "dndId": "area-a2problems4"
+        },
+        {
+          "widgetUri": "Select the Problem",
+          "gridArea": "area-a",
+          "dndId": "area-aSelect the Problem5"
+        },
+        {
+          "widgetUri": "Check Solver Outputs",
+          "gridArea": "area-c",
+          "dndId": "area-cCheck Solver Outputs6"
+        },
+        {
+          "widgetUri": "options",
+          "gridArea": "area-b2",
+          "dndId": "area-b2options7"
+        },
+        {
+          "widgetUri": "Selected Algorithm Options",
+          "gridArea": "area-b2",
+          "dndId": "area-bSelected Algorithm Options9"
+        },
+        {
+          "widgetUri": "Solver Options",
+          "gridArea": "area-b",
+          "dndId": "area-bSolver Options8"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "custom_46380aab-3878-4499-97a4-4819ee2757f7"
+    },
+    "onload": {
+      "aimms": {
+        "run": "ChooseFirstSolver"
+      }
+    },
+    "primarypageaction": {
+      "aimms": {
+        "contents": [
+          "ActionRunOptimization"
+        ],
+        "slices": [
+          {
+            "identifier": "ActionRunOptimization",
+            "slice": [
+              {
+                "index": "webui::indexPageActionSpec",
+                "type": "free",
+                "value": "webui::indexPageActionSpec"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "Select the Problem",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "problems",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Select the Strategy",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Strategies",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Solver Options",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "options",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Solver Outputs",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Check Solver Outputs",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "problem options",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Selected Algorithm Options",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "pages/output": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "distances_2",
+          "gridArea": "area-a4",
+          "dndId": "area-a4distances_20"
+        },
+        {
+          "widgetUri": "lbl x",
+          "gridArea": "area-a",
+          "dndId": "area-albl x1"
+        },
+        {
+          "widgetUri": "x",
+          "gridArea": "Unassigned widgets",
+          "dndId": "Unassigned widgetsx2"
+        },
+        {
+          "widgetUri": "distances_1",
+          "gridArea": "Unassigned widgets",
+          "dndId": "Unassigned widgetsdistances_13"
+        },
+        {
+          "widgetUri": "target_string_1",
+          "gridArea": "area-a2",
+          "dndId": "area-a2target_string_14"
+        },
+        {
+          "widgetUri": "summary_sc",
+          "gridArea": "area-b",
+          "dndId": "area-bsummary_sc5"
+        },
+        {
+          "widgetUri": "summary_sf",
+          "gridArea": "area-c",
+          "dndId": "area-csummary_sf6"
+        },
+        {
+          "widgetUri": "solution",
+          "gridArea": "area-a3",
+          "dndId": "Unassigned widgetssolution"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "custom_96326418-1942-4a83-aac0-7ecb59169860"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "x",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "lbl x",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "target_string_1",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "distances_1",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "summary_sc",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "summary_sf",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "distances_2",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "solution",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "pages/playground": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "summary sc",
+          "gridArea": "area-b",
+          "dndId": "area-bsummary sc0"
+        },
+        {
+          "widgetUri": "Number of Matchings",
+          "gridArea": "Unassigned widgets",
+          "dndId": "Unassigned widgetsNumber of Matchings1"
+        },
+        {
+          "widgetUri": "Fill Target String",
+          "gridArea": "area-a",
+          "dndId": "area-aFill Target String2"
+        },
+        {
+          "widgetUri": "playground string",
+          "gridArea": "area-a2",
+          "dndId": "area-a2playground string3"
+        },
+        {
+          "widgetUri": "Run Playground",
+          "gridArea": "area-a3",
+          "dndId": "area-a3Run Playground4"
+        },
+        {
+          "widgetUri": "Distances",
+          "gridArea": "area-a4",
+          "dndId": "area-a4Distances5"
+        },
+        {
+          "widgetUri": "summary sf",
+          "gridArea": "area-c",
+          "dndId": "Unassigned widgetssummary sf"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "custom_dbcf3812-41dd-4792-b892-2713e183a894"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "Fill Target String",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "playground string",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Run Playground",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Number of Matchings",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "summary sc",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Distances",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "summary sf",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "widgets/alphabet": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "alphabetLetters"
+        ]
+      }
+    },
+    "name": {
+      "literal": "alphabet"
+    },
+    "title": {
+      "literal": "Alphabet"
+    }
+  },
+  "widgets/banner-lexa": {
+    "aimms.widget.type": {
+      "literal": "image"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "banner"
+        ]
+      }
+    },
+    "name": {
+      "literal": "banner-lexa"
+    },
+    "widget.visible": {
+      "literal": 1
+    }
+  },
+  "widgets/Check Solver Outputs": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Check Execution Output"
+    },
+    "name": {
+      "literal": "Check Solver Outputs"
+    }
+  },
+  "widgets/Distances": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "pg_dc",
+          "pg_df",
+          "pg_dc_df"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "name": {
+      "literal": "Distances"
+    },
+    "title": {
+      "literal": "Playground - Distances"
+    }
+  },
+  "widgets/distances_1": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "t_dc"
+        ]
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "colKey": "<IDENTIFIER-SET>",
+          "width": 18.9
+        },
+        {
+          "type": "colHeader",
+          "colKey": {},
+          "width": 51.03
+        }
+      ]
+    },
+    "name": {
+      "literal": "distances (1)"
+    },
+    "title": {
+      "literal": "Distances"
+    }
+  },
+  "widgets/distances_2": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "t_dc",
+          "t_df",
+          "t_dc_df"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "name": {
+      "literal": "distances (2)"
+    },
+    "title": {
+      "literal": "Distances"
+    }
+  },
+  "widgets/download_case": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "DownloadCase"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "download"
+    },
+    "name": {
+      "literal": "download_case"
+    },
+    "title": {
+      "literal": "Download Scenario"
+    }
+  },
+  "widgets/download_txt": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "DownloadTemplateTXT"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "download"
+    },
+    "name": {
+      "literal": "download_txt"
+    },
+    "title": {
+      "literal": "Template TXT"
+    }
+  },
+  "widgets/download_xlsx": {
+    "aimms.widget.type": {
+      "literal": "download"
+    },
+    "name": {
+      "literal": "download_xlsx"
+    },
+    "title": {
+      "literal": "Template XLSX"
+    }
+  },
+  "widgets/error": {
+    "aimms.widget.type": {
+      "literal": "text"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "dialog_message"
+        ],
+        "slices": []
+      }
+    },
+    "name": {
+      "literal": "error"
+    }
+  },
+  "widgets/Fill Target String": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Input a Target String for tests"
+    },
+    "name": {
+      "literal": "Fill Target String"
+    }
+  },
+  "widgets/general_parameters": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "General Parameters"
+    },
+    "name": {
+      "literal": "general_parameters"
+    }
+  },
+  "widgets/How to Cite": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "DownloadHowToCite"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "download"
+    },
+    "name": {
+      "literal": "How to Cite"
+    },
+    "title": {
+      "literal": "How to Cite"
+    }
+  },
+  "widgets/importar_de_arquivo": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Load data from Input Files"
+    },
+    "name": {
+      "literal": "importar_de_arquivo"
+    }
+  },
+  "widgets/lbl x": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Target String Found"
+    },
+    "name": {
+      "literal": "lbl x"
+    }
+  },
+  "widgets/Number of Matchings": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "total_matchings_sc"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "name": {
+      "literal": "Number of Matchings"
+    },
+    "show.units": {
+      "literal": 0
+    },
+    "title": {
+      "literal": "Number of Matchings"
+    }
+  },
+  "widgets/options": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "selected_solver",
+          "min_gap",
+          "enable_time_limit",
+          "time_limit"
+        ]
+      }
+    },
+    "name": {
+      "literal": "options"
+    },
+    "show.units": {
+      "literal": 1
+    },
+    "title": {
+      "literal": "General Solver Options"
+    }
+  },
+  "widgets/playground string": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "compact": {
+      "literal": 1
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "playground_string"
+        ]
+      }
+    },
+    "name": {
+      "literal": "playground string"
+    }
+  },
+  "widgets/problem options": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "MM_m",
+          "MM_card_Sc",
+          "MM_card_Sf"
+        ]
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "keys": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": [
+          "MM_Sc_i",
+          "MM_Sf_i"
+        ]
+      }
+    },
+    "name": {
+      "literal": "problem options"
+    },
+    "title": {
+      "literal": "Problem Options"
+    }
+  },
+  "widgets/problems": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "problem"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "problem": "1"
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "p"
+        ],
+        "colHeader": [],
+        "aggregated": [
+          "<IDENTIFIER-SET>"
+        ]
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "width": 73.55
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "problem"
+          },
+          "width": 15.83
+        },
+        {
+          "type": "colHeader",
+          "colKey": {},
+          "width": 14.24
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "p",
+          "width": 75.12
+        }
+      ]
+    },
+    "name": {
+      "literal": "problems"
+    },
+    "store.focus.in": {
+      "literal": {
+        "p": "selected_problem"
+      }
+    },
+    "title": {
+      "literal": "Problems"
+    }
+  },
+  "widgets/Run Playground": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "RunPlayground"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "button"
+    },
+    "name": {
+      "literal": "Run Playground"
+    },
+    "title": {
+      "literal": "Run Playground"
+    }
+  },
+  "widgets/scl_parameters": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "kc",
+          "kf"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "name": {
+      "literal": "scl_parameters"
+    },
+    "title": {
+      "literal": "Distance Configuration"
+    }
+  },
+  "widgets/Select the Problem": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Select the Problem"
+    },
+    "name": {
+      "literal": "Select the Problem"
+    }
+  },
+  "widgets/Select the Strategy": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Select the Strategy"
+    },
+    "name": {
+      "literal": "Select the Strategy"
+    }
+  },
+  "widgets/Selected Algorithm Options": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "time_limit_lpbn_vns",
+          "N_size"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "time_limit_lpbn_vns": "enabled_lpbn_vns",
+        "n_size": "enabled_lpbn_vns"
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "colKey": "<IDENTIFIER-SET>",
+          "width": 77.65
+        },
+        {
+          "type": "colHeader",
+          "colKey": {},
+          "width": 21.15
+        }
+      ]
+    },
+    "name": {
+      "literal": "Selected Algorithm Options"
+    },
+    "title": {
+      "literal": "Selected Stategy Options"
+    }
+  },
+  "widgets/sets": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Input Sets"
+    },
+    "name": {
+      "literal": "sets"
+    }
+  },
+  "widgets/solution": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "DownloadSolution"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "download"
+    },
+    "name": {
+      "literal": "solution"
+    },
+    "title": {
+      "literal": "Download Solution"
+    }
+  },
+  "widgets/Solver Options": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "literal": "Customize Strategy Options"
+    },
+    "name": {
+      "literal": "Solver Options"
+    }
+  },
+  "widgets/Solver Outputs": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "solver_status",
+          "model_status",
+          "run_time",
+          "number_of_constraints",
+          "number_of_integer_variables",
+          "number_of_linear_variables",
+          "number_of_non_zeros",
+          "final_gap",
+          "objective_function"
+        ]
+      }
+    },
+    "name": {
+      "literal": "Solver Outputs"
+    },
+    "title": {
+      "literal": "Solver's Output (For Control)"
+    }
+  },
+  "widgets/Strategies": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "strategy"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "strategy": "1"
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "st"
+        ],
+        "colHeader": [],
+        "aggregated": [
+          "<IDENTIFIER-SET>"
+        ]
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "width": 20.34
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "strategy"
+          },
+          "width": 15.83
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "st",
+          "width": 74.41
+        },
+        {
+          "type": "colHeader",
+          "colKey": {},
+          "width": 14.58
+        }
+      ]
+    },
+    "name": {
+      "literal": "Strategies"
+    },
+    "store.focus.in": {
+      "literal": {
+        "st": "selected_strategy"
+      }
+    },
+    "title": {
+      "literal": "Strategies"
+    }
+  },
+  "widgets/summary sc": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [
+          {
+            "identifier": "string_c",
+            "slice": [
+              {
+                "index": "c",
+                "type": "subset",
+                "value": "c_actv"
+              }
+            ]
+          }
+        ],
+        "contents": [
+          "pg_alignment_c",
+          "pg_total_matchings_c",
+          "pg_total_mismatchings_c",
+          "pg_alignment_substring_c",
+          "string_c"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "c_actv"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "colKey": "c_actv",
+          "width": 18.08
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "pg_alignment_substring_c"
+          },
+          "width": 82.92
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "string_c"
+          },
+          "width": 119.7
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "pg_total_mismatchings_c"
+          },
+          "width": 39.42
+        }
+      ]
+    },
+    "default.column.width": {
+      "literal": 25
+    },
+    "name": {
+      "literal": "summary sc"
+    },
+    "title": {
+      "literal": "Summary Sc"
+    }
+  },
+  "widgets/summary sf": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [
+          {
+            "identifier": "string_f",
+            "slice": [
+              {
+                "index": "f",
+                "type": "subset",
+                "value": "f_actv"
+              }
+            ]
+          }
+        ],
+        "contents": [
+          "pg_total_matchings_f",
+          "pg_total_mismatchings_f",
+          "pg_alignment_substring_f",
+          "string_f"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "f_actv",
+          "k"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "pg_total_matchings_f"
+          },
+          "width": 31.24
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "string_f"
+          },
+          "width": 58.62
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "pg_alignment_substring_f"
+          },
+          "width": 91.97
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "pg_total_mismatchings_f"
+          },
+          "width": 25.41
+        }
+      ]
+    },
+    "name": {
+      "literal": "summary sf"
+    }
+  },
+  "widgets/summary_sc": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [
+          {
+            "identifier": "alignment_c",
+            "slice": [
+              {
+                "index": "c_actv",
+                "type": "subset",
+                "value": "mm_c"
+              }
+            ]
+          },
+          {
+            "identifier": "alignment_substring_c",
+            "slice": [
+              {
+                "index": "c_actv",
+                "type": "subset",
+                "value": "mm_c"
+              }
+            ]
+          },
+          {
+            "identifier": "total_matchings_c",
+            "slice": [
+              {
+                "index": "c_actv",
+                "type": "subset",
+                "value": "mm_c"
+              }
+            ]
+          },
+          {
+            "identifier": "string_c",
+            "slice": [
+              {
+                "index": "c",
+                "type": "subset",
+                "value": "mm_c"
+              }
+            ]
+          },
+          {
+            "identifier": "pg_total_mismatchings_c",
+            "slice": [
+              {
+                "index": "c_actv",
+                "type": "subset",
+                "value": "mm_c"
+              }
+            ]
+          }
+        ],
+        "contents": [
+          "alignment_c",
+          "total_matchings_c",
+          "pg_total_mismatchings_c",
+          "alignment_substring_c",
+          "string_c"
+        ],
+        "prefix": "aimms",
+        "partition": {
+          "rowHeader": [
+            "mm_c"
+          ],
+          "colHeader": [
+            "<IDENTIFIER-SET>"
+          ],
+          "aggregated": []
+        },
+        "numdecimals": 0
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "mm_c"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "alignment_c"
+          },
+          "width": 20.2
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "total_matchings_c"
+          },
+          "width": 17.29
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "alignment_substring_c"
+          },
+          "width": 34.41
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "string_c"
+          },
+          "width": 135.39
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "mm_c",
+          "width": 19.58
+        }
+      ]
+    },
+    "name": {
+      "literal": "summary_sc"
+    },
+    "title": {
+      "literal": "Summary Sc"
+    }
+  },
+  "widgets/summary_sf": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [
+          {
+            "identifier": "total_matchings_f",
+            "slice": [
+              {
+                "index": "f_actv",
+                "type": "subset",
+                "value": "mm_f"
+              },
+              {
+                "index": "k",
+                "type": "free",
+                "value": "k"
+              }
+            ]
+          },
+          {
+            "identifier": "string_f",
+            "slice": [
+              {
+                "index": "f",
+                "type": "subset",
+                "value": "mm_f"
+              }
+            ]
+          },
+          {
+            "identifier": "pg_total_mismatchings_f",
+            "slice": [
+              {
+                "index": "f_actv",
+                "type": "subset",
+                "value": "mm_f"
+              },
+              {
+                "index": "k",
+                "type": "free",
+                "value": "k"
+              }
+            ]
+          }
+        ],
+        "contents": [
+          "total_matchings_f",
+          "pg_total_mismatchings_f",
+          "alignment_substring_f",
+          "string_f"
+        ],
+        "prefix": "aimms",
+        "partition": {
+          "rowHeader": [
+            "f_actv",
+            "mm_f",
+            "k"
+          ],
+          "colHeader": [
+            "<IDENTIFIER-SET>"
+          ],
+          "aggregated": []
+        }
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "f_actv",
+          "mm_f",
+          "k"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "alignment_substring_f"
+          },
+          "width": 37.07
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "string_f"
+          },
+          "width": 115.81
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "total_matchings_f"
+          },
+          "width": 20.41
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "pg_total_mismatchings_f"
+          },
+          "width": 18.54
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "mm_f",
+          "width": 20.52
+        }
+      ]
+    },
+    "name": {
+      "literal": "summary_sf"
+    },
+    "title": {
+      "literal": "Summary Sf"
+    }
+  },
+  "widgets/target_string": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "m"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "name": {
+      "literal": "target_string"
+    },
+    "title": {
+      "literal": "Target String Length"
+    }
+  },
+  "widgets/target_string_1": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "compact": {
+      "literal": 1
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "target_string"
+        ]
+      }
+    },
+    "name": {
+      "literal": "target_string (1)"
+    }
+  },
+  "widgets/tbl_sc": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "active_c",
+          "string_c"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "active_c": "1",
+        "string_c": "1"
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "c"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "active_c"
+          },
+          "width": 24.16
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "c",
+          "width": 34.1
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "string_c"
+          },
+          "width": 265.08
+        }
+      ]
+    },
+    "name": {
+      "literal": "tbl_sc"
+    },
+    "store.focus.in": {
+      "literal": {
+        "c": "CurrentSc"
+      }
+    },
+    "title": {
+      "literal": "SC"
+    },
+    "widgetactions": {
+      "aimms": {
+        "contents": [
+          "ActionsSc"
+        ],
+        "slices": [
+          {
+            "identifier": "ActionsSc",
+            "slice": [
+              {
+                "index": "webui::indexPageExtension",
+                "type": "free",
+                "value": "webui::indexPageExtension"
+              },
+              {
+                "index": "webui::indexWidgetActionSpec",
+                "type": "free",
+                "value": "webui::indexWidgetActionSpec"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "widgets/tbl_sf": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "active_f",
+          "string_f"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "active_f": "1",
+        "string_f": "1"
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "f"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "colKey": "f",
+          "width": 35.34
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "active_f"
+          },
+          "width": 23.74
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "string_f"
+          },
+          "width": 264.27
+        }
+      ]
+    },
+    "name": {
+      "literal": "tbl_sf"
+    },
+    "title": {
+      "literal": "SF"
+    }
+  },
+  "widgets/title error": {
+    "aimms.widget.type": {
+      "literal": "label"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "dialog_title"
+        ],
+        "slices": []
+      }
+    },
+    "name": {
+      "literal": "title error"
+    }
+  },
+  "widgets/upload_case": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "LoadCase"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "upload"
+    },
+    "name": {
+      "literal": "upload_case"
+    },
+    "title": {
+      "literal": "Upload Scenario"
+    }
+  },
+  "widgets/upload_txt": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "LoadTXT"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "upload"
+    },
+    "name": {
+      "literal": "upload_txt"
+    },
+    "title": {
+      "literal": "Upload TXT"
+    }
+  },
+  "widgets/upload_xlsx": {
+    "aimms.widget.type": {
+      "literal": "upload"
+    },
+    "name": {
+      "literal": "upload_xlsx"
+    },
+    "title": {
+      "literal": "Upload XLSX"
+    }
+  },
+  "widgets/user_manual": {
+    "aimms.widget.type": {
+      "literal": "download"
+    },
+    "name": {
+      "literal": "user_manual"
+    },
+    "title": {
+      "literal": "Download User Manual"
+    }
+  },
+  "widgets/x": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "x"
+        ]
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "i",
+          "j"
+        ],
+        "colHeader": [],
+        "aggregated": [
+          "<IDENTIFIER-SET>"
+        ]
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "j": "4"
+          },
+          "width": 33.32
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "i",
+          "width": 13.83
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "j",
+          "width": 20.75
+        }
+      ]
+    },
+    "name": {
+      "literal": "x"
+    },
+    "title": {
+      "literal": "x"
+    }
+  }
+}

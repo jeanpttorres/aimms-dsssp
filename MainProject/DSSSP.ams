@@ -1,0 +1,1532 @@
+## ams_version=1.0
+
+Model Main_DSSSP {
+	Section Declarations {
+		Section Closest_Set {
+			Set Sc {
+				Index: c;
+				Parameter: ep_c;
+				OrderBy: val(c);
+			}
+			DeclarationSection Sc_Definitions {
+				StringParameter string_c {
+					IndexDomain: c;
+				}
+				Parameter active_c {
+					IndexDomain: c;
+					Range: binary;
+				}
+			}
+			DeclarationSection Sc_Defined {
+				Set Sc_Active {
+					SubsetOf: Sc;
+					Index: c_actv;
+					Property: NoSave;
+					Definition: {
+						{c | active_c(c)}
+					}
+				}
+				ElementParameter active_sc {
+					IndexDomain: s;
+					Range: Sc_Active;
+					Definition: first(Sc_Active) + (val(s)-1);
+				}
+				StringParameter active_string_sc {
+					IndexDomain: s;
+					Property: NoSave;
+					Definition: string_c(active_sc(s));
+				}
+				Parameter active_string_size_sc {
+					IndexDomain: s;
+					Range: integer;
+					Property: NoSave;
+					Definition: StringLength(active_string_sc(s));
+				}
+				StringParameter symbol_sc {
+					IndexDomain: (s,k);
+					Property: NoSave;
+					Definition: substring(active_string_sc(s), k, k);
+				}
+				ElementParameter letter_sc {
+					IndexDomain: (s,k);
+					Range: Alphabet;
+					Property: NoSave;
+					Definition: StringToElement(Alphabet, symbol_sc(s, k));
+				}
+				Parameter ord_letter_sc {
+					IndexDomain: (s,k);
+					Range: integer;
+					Definition: ord(letter_sc(s, k));
+				}
+			}
+		}
+		Section Furthest_Set {
+			Set Sf {
+				Index: f;
+				Parameter: ep_f;
+				OrderBy: val(f);
+			}
+			DeclarationSection Sf_Definitions {
+				StringParameter string_f {
+					IndexDomain: f;
+				}
+				Parameter active_f {
+					IndexDomain: f;
+					Range: binary;
+				}
+			}
+			DeclarationSection Sf_Defined {
+				Set Sf_Active {
+					SubsetOf: Sf;
+					Index: f_active, f_actv;
+					Parameter: ep_f_active;
+					Property: NoSave;
+					Definition: {
+						{f | active_f(f)}
+					}
+				}
+				ElementParameter active_sf {
+					IndexDomain: s;
+					Range: Sf_Active;
+					Definition: first(Sf_Active) + (val(s)-1);
+				}
+				StringParameter active_string_sf {
+					IndexDomain: s;
+					Property: NoSave;
+					Definition: string_f(active_sf(s));
+				}
+				Parameter active_string_size_sf {
+					IndexDomain: s;
+					Range: integer;
+					Property: NoSave;
+					Definition: StringLength(active_string_sf(s));
+				}
+				StringParameter symbol_sf {
+					IndexDomain: (s,k);
+					Property: NoSave;
+					Definition: substring(active_string_sf(s), k, k);
+				}
+				ElementParameter letter_sf {
+					IndexDomain: (s,k);
+					Range: Alphabet;
+					Property: NoSave;
+					Definition: StringToElement(Alphabet, symbol_sf(s, k));
+				}
+				Parameter ord_letter_sf {
+					IndexDomain: (s,k);
+					Range: integer;
+					Definition: ord(letter_sf(s, k));
+				}
+			}
+		}
+		Section Ks {
+			Parameter kc;
+			Parameter kf;
+		}
+		Section Info_Indexes {
+			Parameter m {
+				Range: integer;
+			}
+			Set Indexes {
+				SubsetOf: Integers;
+				Index: i, j, k, s;
+				Parameter: ep_index;
+				Property: NoSave, ElementsAreLabels;
+				Definition: {
+					{1..max(card(Sc), card(Sf), m, card(Alphabet), StringLength(string_c(first(Sc))))}
+				}
+			}
+		}
+		Section Info_Alphabet {
+			Set Alphabet {
+				Index: a;
+				Parameter: ep_a;
+			}
+			StringParameter alphabetLetters {
+				Property: NoSave;
+				webui::UponChangeProcedure: CreateAplhabetSet;
+			}
+			Parameter alphabetSize {
+				Range: integer;
+			}
+			Procedure CreateAplhabetSet {
+				Body: {
+					letters := alphabetLetters;
+					empty Alphabet;
+					
+					while StringLength(letters) > 1 do
+					    letter := Substring(letters, 1, 1);
+					    ep_a := StringToElement(Alphabet, letter, 1);
+					    letters := Substring(letters, 2, StringLength(letters));
+					endwhile;
+					
+					letter := letters;
+					ep_a := StringToElement(Alphabet, letter, 1);
+					alphabetLetters := sum(a, formatString("%e", a));
+				}
+				StringParameter letters;
+				StringParameter letter;
+			}
+		}
+		Section Info_Algorithms {
+			Set Strategies {
+				Index: st;
+				Parameter: ep_s;
+				Definition: data { '(RA) Rounding Algorithm', '(ILPBN-VNS) ILP-based neighbourhoods', '(ILPBS-VNS) ILP-based search', '(B&B) Exact' };
+			}
+			ElementParameter selected_strategy {
+				Range: Strategies;
+				InitialData: {
+					'(RA) Rounding Algorithm' ;
+				}
+			}
+			Parameter strategy {
+				IndexDomain: st;
+				Range: binary;
+				InitialData: data { '(RA) Rounding Algorithm' : 1 };
+				webui::UponChangeProcedure: UpdateAlgorithm;
+			}
+			StringParameter abv_strategy {
+				IndexDomain: st;
+				Property: NoSave;
+				Definition: {
+					data 
+					{ '(RA) Rounding Algorithm'              : "ra"       ,  '(ILPBN-VNS) ILP-based neighbourhoods' : "ilpbn-vns",
+					  '(ILPBS-VNS) ILP-based search'         : "ilpbs-vns",  '(B&B) Exact'                          : "exact"     }
+				}
+			}
+			Procedure UpdateAlgorithm {
+				Body: {
+					empty strategy;
+					strategy(selected_strategy) := 1;
+				}
+			}
+		}
+		Section Info_Problems {
+			Set Problems {
+				Index: p;
+				Parameter: ep_p;
+				Property: NoSave;
+				Definition: {
+					data 
+					    { '(CSP) Closest String Problem'                      , '(CSSP) Closest Substring Problem'                  ,
+					      '(FSP) Furthest String Problem'                     , '(FSSP) Furthest Substring Problem'                 ,
+					      '(DSSP) Distinguishing String Selection Problem'    , '(DSSSP) Distinguishing Substring Selection Problem' }
+				}
+			}
+			ElementParameter selected_problem {
+				Range: Problems;
+				InitialData: {
+					'(DSSSP) Distinguishing Substring Selection Problem' ;
+				}
+			}
+			StringParameter abv_problem {
+				IndexDomain: p;
+				Property: NoSave;
+				Definition: {
+					data 
+					{ '(CSP) Closest String Problem'                       : "csp",
+					  '(CSSP) Closest Substring Problem'                   : "cssp",
+					  '(FSP) Furthest String Problem'                      : "fsp",
+					  '(FSSP) Furthest Substring Problem'                  : "fssp",
+					  '(DSSP) Distinguishing String Selection Problem'     : "dssp",
+					  '(DSSSP) Distinguishing Substring Selection Problem' : "dsssp" }
+				}
+			}
+			Parameter problem {
+				IndexDomain: p;
+				Range: binary;
+				InitialData: data { '(DSSSP) Distinguishing Substring Selection Problem' : 1 };
+				webui::UponChangeProcedure: UpdateStrategy;
+			}
+			Procedure UpdateStrategy {
+				Body: {
+					empty problem;
+					problem(selected_problem) := 1;
+				}
+			}
+		}
+		Section Solver_Options {
+			Parameter min_gap {
+				Range: nonnegative;
+				InitialData: {
+					0 ;
+				}
+			}
+			Parameter threads {
+				Range: integer;
+				InitialData: {
+					1 ;
+				}
+			}
+			Parameter enable_time_limit {
+				Range: binary;
+			}
+			Parameter time_limit {
+				Range: nonnegative;
+				Unit: s;
+				InitialData: {
+					600 ;
+				}
+			}
+			ElementParameter selected_solver {
+				Range: AllSolvers;
+				Default: '';
+			}
+			Procedure ChooseFirstSolver {
+				Body: {
+					if not nondefault(selected_solver) then
+					    selected_solver := first(AllSolvers);
+					endif;
+					
+					if not exists(p | nondefault(problem(p))) then
+					    problem('(DSSSP) Distinguishing Substring Selection Problem') := 1;
+					    selected_problem := '(DSSSP) Distinguishing Substring Selection Problem';
+					endif;
+					
+					if not exists(st | nondefault(strategy(st))) then
+					    strategy('(RA) Rounding Algorithm') := 1;
+					    selected_strategy := '(RA) Rounding Algorithm';
+					endif;
+				}
+			}
+		}
+		Section Solver_Outputs {
+			ElementParameter solver_status {
+				Range: AllSolutionStates;
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			ElementParameter model_status {
+				Range: AllSolutionStates;
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			Parameter number_of_constraints {
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			Parameter number_of_integer_variables {
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			Parameter number_of_linear_variables {
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			Parameter number_of_non_zeros {
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			Parameter final_gap {
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			Parameter objective_function {
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+		}
+		Section Playground {
+			Procedure RunPlayground {
+				Body: {
+					empty pg_symbol_target_string,
+					        pg_matching_sc,
+					        pg_matching_sf,
+					        pg_total_matchings_sc,
+					        pg_total_matchings_sf,
+					        pg_alignment_sc,
+					        pg_alignment_c,
+					        pg_alignment_substring_c,
+					        pg_alignment_substring_f,
+					        pg_total_matchings_c,
+					        pg_total_mismatchings_c,
+					        pg_total_matchings_f,
+					        pg_total_mismatchings_f,
+					        pg_dc,
+					        pg_df;
+					
+					if StringLength(playground_string) <> m then
+					    dialog_title := "Error: Playground's Target String length";
+					    dialog_message := "Lenght of the playground's target string differs from the string size m defined in the input";
+					
+					    dialog_actions := {'OK'};
+					    webui::OpenDialogPage(
+					            pageId  :  'dialog', 
+					            title   :  "", 
+					            actions :  dialog_actions, 
+					            onDone  :  '');
+					    empty playground_string;
+					    return;
+					endif;
+					
+					block !SC
+					pg_symbol_target_string(i) := Substring(playground_string, i, i);
+					
+					pg_matching_sc(s, k, i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m
+					:= 1 $ (pg_symbol_target_string(i) = symbol_sc(s, (k + (val(i) - 1))));
+					
+					pg_total_matchings_sc(s, k) | s <= card(Sc_Active) and k <= active_string_size_sc(s)
+					:= sum(i | i <= m,  pg_matching_sc(s, k, i));
+					
+					pg_alignment_sc(s) | s <= card(Sc_Active)
+					:= val(first(k | pg_total_matchings_sc(s, k) = max(i, pg_total_matchings_sc(s, i))));
+					
+					pg_alignment_c(c_actv)
+					:= pg_alignment_sc(first(s | ord(s) = ord(c_actv)));
+					
+					pg_alignment_substring_c(c_actv)
+					:= Substring(string_c(c_actv), pg_alignment_c(c_actv), pg_alignment_c(c_actv) + m - 1);
+					
+					pg_total_matchings_c(c_actv)
+					:= pg_total_matchings_sc(first(s | ord(s) = ord(c_actv)), first(k | ord(k) = pg_alignment_c(c_actv)));
+					
+					pg_total_mismatchings_c(c_actv)
+					:= m - pg_total_matchings_c(c_actv);
+					
+					pg_dc := m - min(c_actv,  pg_total_matchings_c(c_actv));
+					endblock;
+					
+					
+					block !SF
+					pg_matching_sf(s, k, i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m
+					:= 1 $ (pg_symbol_target_string(i) = symbol_sf(s, (k + (val(i) - 1))));
+					
+					pg_total_matchings_sf(s, k) | s <= card(Sf_Active) and k <= active_string_size_sf(s)
+					:= sum(i | i <= m,  pg_matching_sf(s, k, i));
+					
+					pg_alignment_substring_f(f_actv, k)
+					:= Substring(string_f(f_actv), val(k), val(k) + m -1);
+					
+					pg_total_matchings_f(f_actv, k)
+					:= pg_total_matchings_sf(first(s | ord(s) = ord(f_actv)), k);
+					
+					pg_df := m - max((f_actv, k), pg_total_matchings_f(f_actv, k));
+					
+					pg_total_mismatchings_f(f_actv, k)
+					:= m - pg_total_matchings_f(f_actv, k);
+					endblock;
+					
+					pg_dc_df := pg_dc - pg_df;
+				}
+				ElementParameter aux {
+					Range: Indexes;
+				}
+				Set dialog_actions;
+			}
+			StringParameter playground_string;
+			StringParameter pg_symbol_target_string {
+				IndexDomain: i;
+				Property: NoSave;
+			}
+			Parameter pg_matching_sc {
+				IndexDomain: (s,k,i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m;
+				Range: binary;
+				Property: NoSave;
+			}
+			Parameter pg_matching_sf {
+				IndexDomain: (s,k,i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m;
+				Range: binary;
+				Property: NoSave;
+			}
+			Parameter pg_total_matchings_sc {
+				IndexDomain: (s,k) | s <= card(Sc_Active) and k <= active_string_size_sc(s);
+				Range: integer;
+				Property: NoSave;
+			}
+			Parameter pg_total_matchings_sf {
+				IndexDomain: (s,k) | s <= card(Sf_Active) and k <= active_string_size_sf(s);
+				Range: integer;
+				Property: NoSave;
+			}
+			Parameter pg_alignment_sc {
+				IndexDomain: s;
+				Range: integer;
+				Property: NoSave;
+			}
+			Parameter pg_alignment_c {
+				IndexDomain: c_actv;
+				Range: integer;
+				Property: NoSave;
+			}
+			StringParameter pg_alignment_substring_c {
+				IndexDomain: c_actv;
+			}
+			StringParameter pg_alignment_substring_f {
+				IndexDomain: (f_actv, k) | k <= StringLength(string_f(first(Sf_Active)));
+			}
+			Parameter pg_total_matchings_c {
+				IndexDomain: c_actv;
+				Range: integer;
+				Default: maxint;
+			}
+			Parameter pg_total_mismatchings_c {
+				IndexDomain: c_actv;
+			}
+			Parameter pg_total_matchings_f {
+				IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+				Range: integer;
+				Default: maxint;
+				Property: NoSave;
+			}
+			Parameter pg_total_mismatchings_f {
+				IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+				Range: integer;
+				Default: maxint;
+				Property: NoSave;
+			}
+			Parameter pg_dc {
+				Range: integer;
+				Default: maxint;
+			}
+			Parameter pg_df {
+				Range: integer;
+				Default: maxint;
+			}
+			Parameter pg_dc_df;
+		}
+		Section Algorithm_Output {
+			StringParameter target_string;
+			StringParameter symbol_target_string {
+				IndexDomain: i;
+				Property: NoSave;
+				Definition: Substring(target_string, i, i);
+			}
+			Parameter matching_sc {
+				IndexDomain: (s,k,i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m;
+				Range: binary;
+				Property: NoSave;
+				Definition: 1 $ (symbol_target_string(i) = symbol_sc(s, (k + (val(i) - 1))));
+			}
+			Parameter matching_sf {
+				IndexDomain: (s,k,i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m;
+				Range: binary;
+				Property: NoSave;
+				Definition: 1 $ (symbol_target_string(i) = symbol_sf(s, (k + (val(i) - 1))));
+			}
+			Parameter total_matchings_sc {
+				IndexDomain: (s,k) | s <= card(Sc_Active) and k <= active_string_size_sc(s);
+				Range: integer;
+				Default: maxint;
+				Property: NoSave;
+				Definition: sum(i | i <= m,  matching_sc(s, k, i));
+			}
+			Parameter total_matchings_sf {
+				IndexDomain: (s,k) | s <= card(Sf_Active) and k <= active_string_size_sf(s);
+				Range: integer;
+				Default: maxint;
+				Property: NoSave;
+				Definition: sum(i | i <= m,  matching_sf(s, k, i));
+			}
+			Parameter alignment_sc {
+				IndexDomain: s | s <= card(Sc_Active);
+				Range: integer;
+				Property: NoSave;
+				Definition: val(first(k | total_matchings_sc(s, k) = max(i, total_matchings_sc(s, i))));
+			}
+			Parameter alignment_c {
+				IndexDomain: c_actv;
+				Range: integer;
+				Property: NoSave;
+				Definition: alignment_sc(first(s | ord(s) = ord(c_actv)));
+			}
+			StringParameter alignment_substring_c {
+				IndexDomain: c_actv;
+				Definition: Substring(string_c(c_actv), alignment_c(c_actv), alignment_c(c_actv) + m - 1);
+			}
+			StringParameter alignment_substring_f {
+				IndexDomain: (mm_f, k) | k <= StringLength(string_f(first(Sf_Active)));
+				Definition: Substring(string_f(mm_f), val(k), val(k) + m - 1);
+			}
+			Parameter total_matchings_c {
+				IndexDomain: c_actv;
+				Default: maxint;
+				Definition: total_matchings_sc(first(s | ord(s) = ord(c_actv)), first(k | ord(k) = alignment_c(c_actv)));
+			}
+			Parameter total_mismatchings_c {
+				IndexDomain: c_actv;
+				Default: maxint;
+				Definition: m - total_matchings_c(c_actv);
+			}
+			Parameter total_matchings_f {
+				IndexDomain: (f_actv, k) | k <= StringLength(string_f(first(Sf_Active)));
+				Default: maxint;
+				Definition: total_matchings_sf(first(s | ord(s) = ord(f_actv)), k);
+			}
+			Parameter total_mismatchings_f {
+				IndexDomain: (f_actv, k) | k <= StringLength(string_f(first(Sf_Active)));
+				Default: maxint;
+				Definition: m - total_matchings_f(f_actv, k);
+			}
+			Parameter t_dc {
+				Range: integer;
+				Default: maxint;
+				Property: NoSave;
+				Definition: {
+					if card(MM_Sc) = 0  then
+					    0    
+					else
+					    m - min(mm_c, total_matchings_c (mm_c))
+					endif;
+				}
+			}
+			Parameter t_df {
+				Range: integer;
+				Default: maxint;
+				Property: NoSave;
+				Definition: {
+					if card(MM_Sf) = 0  then
+					    0    
+					else
+					    m - max((mm_f, k), total_matchings_f(mm_f, k))
+					endif;
+				}
+			}
+			Parameter t_dc_df {
+				Definition: {
+					if nondefault(t_dc) and nondefault(t_df) then
+					    t_dc - t_df
+					elseif nondefault(t_dc) then
+					    t_dc
+					elseif nondefault(t_df) then
+					    t_df
+					endif;
+				}
+			}
+		}
+	}
+	Section Integration {
+		Procedure LoadCase {
+			Arguments: (FileLocation,StatusCode,StatusDescription);
+			Body: {
+				FileFinalPath := webui::GetIOFilePath(FileLocation);
+				empty Declarations;
+				
+				block
+					caseFileLoad(FileFinalPath);
+				onerror err do 
+					statusCode := webui::ReturnStatusCode('ERROR');
+					statusDescription := "Error.";
+					return;
+				endblock;
+				
+				StatusCode := webui::ReturnStatusCode('OK');
+				StatusDescription := "Success.";
+			}
+			StringParameter FileLocation {
+				Property: Input;
+			}
+			StringParameter FileFinalPath;
+			Parameter StatusCode {
+				Property: Output;
+			}
+			StringParameter StatusDescription {
+				Property: Output;
+			}
+			ElementParameter err {
+				Range: errh::PendingErrors;
+			}
+		}
+		Procedure DownloadCase {
+			Arguments: (FileLocation,StatusCode,StatusDescription);
+			Body: {
+				FileLocation := "case-"+CurrentToString("%c%y-%m-%d_%H-%M-%S")+".data";
+				
+				FileFinalPath := webui::GetIOFilePath(FileLocation);
+				ExportData := AllIdentifiers;
+				CaseFileSave(FileFinalPath, ExportData);
+				
+				if FileExists(FileFinalPath) then
+				
+				    StatusCode := webui::ReturnStatusCode('CREATED');
+				    StatusDescription := "SUCCESS.";
+				
+				    else       
+				    statusCode := webui::ReturnStatusCode('ERROR');
+				    statusDescription := "ERROR.";
+				endif;
+			}
+			StringParameter FileLocation {
+				Property: Output;
+			}
+			StringParameter FileFinalPath;
+			Parameter StatusCode {
+				Property: Output;
+			}
+			StringParameter StatusDescription {
+				Property: Output;
+			}
+			ElementParameter err {
+				Range: errh::PendingErrors;
+			}
+			Set ExportData {
+				SubsetOf: AllIdentifiers;
+			}
+		}
+		Procedure LoadTXT {
+			Arguments: (FileLocation,StatusCode,StatusDescription);
+			Body: {
+				input_file := FileLocation;
+				FileFinalPath := webui::GetIOFilePath(FileLocation);
+				empty Declarations;
+				
+				block
+					content := FileRead(FileFinalPath);
+					!Read Alphabet Size
+					position := FindString(content, "\n");
+					alphabetSize := val(Substring(content, 1, position-1));
+					content := Substring(content, position+1, StringLength(content));
+				
+				    !Read Sc Size
+				    position := FindString(content, " ");
+				    sc_size := val(Substring(content, 1, position-1));
+					content := Substring(content, position+1, StringLength(content));
+				
+					!Read Sf Size
+					position := FindString(content, "\n");
+				    sf_size := val(Substring(content, 1, position-1));
+					content := Substring(content, position+1, StringLength(content));
+				
+					!Read m
+					position := FindString(content, "\n");
+				    m := val(Substring(content, 1, position-1));
+					content := Substring(content, position+1, StringLength(content));
+				
+					!Read kc
+					position := FindString(content, " ");
+				    kc := val(Substring(content, 1, position-1));
+					content := Substring(content, position+1, StringLength(content));
+				
+					!Read kf
+					position := FindString(content, "\n");
+				    kf := val(Substring(content, 1, position-1));
+					content := Substring(content, position+1, StringLength(content));
+				
+					!Read Alphabet
+					count_index := alphabetSize;
+					while count_index > 0 do
+					    position := FindString(content, "\n");
+					    aux := Substring(content, 1, position-1);
+					    content := Substring(content, position+1, StringLength(content));
+				
+					    ep_a := StringToElement(Alphabet, aux, 1);
+				
+					    count_index -= 1;
+					endwhile;
+				
+					!Read Sc
+					count_index := sc_size;
+					while count_index > 0 do
+					    position := FindString(content, "\n");
+					    aux := Substring(content, 1, position-1);
+					    content := Substring(content, position+1, StringLength(content));
+				
+					    ep_c := StringToElement(Sc, formatString("%n", (sc_size+1)-count_index), 1);
+					    active_c(ep_c) := 1;
+					    string_c(ep_c) := aux;
+				
+					    count_index -= 1;
+					endwhile;
+				
+					!Read Sf
+					count_index := sf_size;
+					while count_index > 0 do
+					    position := FindString(content, "\n");
+					    aux := Substring(content, 1, position-1);
+					    content := Substring(content, position+1, StringLength(content));
+				
+					    ep_f := StringToElement(Sf, formatString("%n", (sc_size+1)-count_index), 1);
+					    active_f(ep_f) := 1;
+					    string_f(ep_f) := aux;
+				
+					    count_index -= 1;
+					endwhile;
+					alphabetLetters := sum(a, formatString("%e", a));
+				onerror err do 
+					statusCode := webui::ReturnStatusCode('ERROR');
+					statusDescription := "Error.";
+					return;
+				endblock;
+				
+				StatusCode := webui::ReturnStatusCode('OK');
+				StatusDescription := "Success.";
+			}
+			StringParameter FileLocation {
+				Property: Input;
+			}
+			StringParameter FileFinalPath;
+			Parameter StatusCode {
+				Property: Output;
+			}
+			StringParameter StatusDescription {
+				Property: Output;
+			}
+			ElementParameter err {
+				Range: errh::PendingErrors;
+			}
+			StringParameter content;
+			Parameter position;
+			Parameter sc_size {
+				Range: integer;
+			}
+			Parameter sf_size {
+				Range: integer;
+			}
+			Parameter count_index;
+			StringParameter aux;
+		}
+		Procedure DownloadTemplateTXT {
+			Arguments: (FileLocation,StatusCode,StatusDescription);
+			Body: {
+				FileLocation := "template.txt";
+				
+				FileFinalPath := webui::GetIOFilePath(FileLocation);
+				
+				if FileExists(FileFinalPath) then
+				
+				    StatusCode := webui::ReturnStatusCode('CREATED');
+				    StatusDescription := "SUCCESS.";
+				
+				    else       
+				    statusCode := webui::ReturnStatusCode('ERROR');
+				    statusDescription := "ERROR.";
+				endif;
+			}
+			StringParameter FileLocation {
+				Property: Output;
+			}
+			StringParameter FileFinalPath;
+			Parameter StatusCode {
+				Property: Output;
+			}
+			StringParameter StatusDescription {
+				Property: Output;
+			}
+			ElementParameter err {
+				Range: errh::PendingErrors;
+			}
+			Set ExportData {
+				SubsetOf: AllIdentifiers;
+			}
+		}
+		Procedure DownloadHowToCite {
+			Arguments: (FileLocation,StatusCode,StatusDescription);
+			Body: {
+				FileLocation := "how_to_cite.ris";
+				
+				FileFinalPath := webui::GetIOFilePath(FileLocation);
+				
+				if FileExists(FileFinalPath) then
+				
+				    StatusCode := webui::ReturnStatusCode('CREATED');
+				    StatusDescription := "SUCCESS.";
+				
+				    else       
+				    statusCode := webui::ReturnStatusCode('ERROR');
+				    statusDescription := "ERROR.";
+				endif;
+			}
+			StringParameter FileLocation {
+				Property: Output;
+			}
+			StringParameter FileFinalPath;
+			Parameter StatusCode {
+				Property: Output;
+			}
+			StringParameter StatusDescription {
+				Property: Output;
+			}
+			ElementParameter err {
+				Range: errh::PendingErrors;
+			}
+			Set ExportData {
+				SubsetOf: AllIdentifiers;
+			}
+		}
+		Procedure DownloadSolution {
+			Arguments: (FileLocation,StatusCode,StatusDescription);
+			Body: {
+				if nondefault(input_file) then
+				    FileLocation := input_file + "_"
+				            + abv_problem(selected_problem) +"_"
+				            + abv_strategy(selected_strategy)+"_"
+				            + CurrentToString("%c%y-%m-%d_%H-%M-%S")
+				            +".sol";
+				else
+				    FileLocation := formatString("%e", CurrentCase) + "_"
+				            + abv_problem(selected_problem) +"_"
+				            + abv_strategy(selected_strategy)+"_"
+				            + CurrentToString("%c%y-%m-%d_%H-%M-%S")
+				            +".sol";
+				endif; 
+				
+				txt := "time: " + formatString("%ns\n", run_time)
+				+ "Objective Value(dc - df) = " + formatString("%n\n", t_dc - t_df)
+				+ "String(x) = " + target_string + "\n"
+				+ "dc = " + formatString("%n", t_dc) + "\n"
+				+ "df = " + formatString("%n", t_df) + "\n";
+				
+				FileFinalPath := webui::GetIOFilePath(FileLocation);
+				PUT out;
+				PUT txt;
+				PUTCLOSE;
+				
+				if FileExists(FileFinalPath) then
+				
+				    StatusCode := webui::ReturnStatusCode('CREATED');
+				    StatusDescription := "SUCCESS.";
+				
+				    else       
+				    statusCode := webui::ReturnStatusCode('ERROR');
+				    statusDescription := "ERROR.";
+				endif;
+			}
+			File out {
+				Name: FileFinalPath;
+				Device: Disk;
+				Encoding: 'UTF8';
+				Mode: replace;
+			}
+			StringParameter FileLocation {
+				Property: Output;
+			}
+			StringParameter FileFinalPath;
+			Parameter StatusCode {
+				Property: Output;
+			}
+			StringParameter StatusDescription {
+				Property: Output;
+			}
+			ElementParameter err {
+				Range: errh::PendingErrors;
+			}
+			Set ExportData {
+				SubsetOf: AllIdentifiers;
+			}
+			StringParameter txt;
+		}
+	}
+	Section GUI {
+		Section GUI_Declarations {
+			StringParameter GUI_ReadOnly {
+				Property: NoSave;
+				Definition: "ReadOnly";
+			}
+		}
+		Section Workflow {
+			StringParameter Workflows {
+				IndexDomain: (webui::indexWorkflowOrder,webui::indexWorkflowSpec);
+			}
+			StringParameter WorkflowSteps {
+				IndexDomain: (webui::indexWorkflowOrder,webui::indexNoOfPages,webui::indexWorkflowPageSpec);
+				Definition: {
+					data 
+					{ ( 1, 1, displayText       ) : "Home"              ,  ( 1, 1, icon              ) : "aimms-home"        ,
+					  ( 1, 1, pageId            ) : "home"              ,  ( 1, 1, workflowPageState ) : "Active"            ,
+					  ( 1, 1, pageDataState     ) : "Incomplete"        ,  ( 1, 2, displayText       ) : "Input"             ,
+					  ( 1, 2, icon              ) : "aimms-file-upload2",  ( 1, 2, pageId            ) : "input"             ,
+					  ( 1, 2, workflowPageState ) : "Active"            ,  ( 1, 2, pageDataState     ) : "Incomplete"        ,
+					  ( 1, 3, displayText       ) : "Playground"        ,  ( 1, 3, icon              ) : "aimms-palette"     ,
+					  ( 1, 3, pageId            ) : "playground"        ,  ( 1, 3, workflowPageState ) : "Active"            ,
+					  ( 1, 3, pageDataState     ) : "Incomplete"        ,  ( 1, 4, displayText       ) : "Optimization"      ,
+					  ( 1, 4, icon              ) : "aimms-play3"       ,  ( 1, 4, pageId            ) : "optimization"      ,
+					  ( 1, 4, workflowPageState ) : "Active"            ,  ( 1, 4, pageDataState     ) : "Incomplete"        ,
+					  ( 1, 5, displayText       ) : "Output"            ,  ( 1, 5, icon              ) : "aimms-file-text"   ,
+					  ( 1, 5, pageId            ) : "output"            ,  ( 1, 5, workflowPageState ) : "Active"            ,
+					  ( 1, 5, pageDataState     ) : "Incomplete"        ,  ( 1, 6, displayText       ) : "Logs"              ,
+					  ( 1, 6, icon              ) : "aimms-book3"       ,  ( 1, 6, pageId            ) : "logs"              ,
+					  ( 1, 6, workflowPageState ) : "Active"            ,  ( 1, 6, pageDataState     ) : "Incomplete"         }
+				}
+			}
+		}
+		Section Home {
+			StringParameter banner {
+				Definition: "lexa.png";
+			}
+		}
+		Section GUI_Input {
+			StringParameter actionsSc {
+				IndexDomain: (webui::indexPageExtension, webui::indexWidgetActionSpec);
+				Definition: {
+					data 
+					{ ( 1, displaytext ) : "Add Element"    ,  ( 1, icon        ) : "aimms-plus"     ,  ( 1, procedure   ) : "AddElementSc"   ,
+					  ( 1, state       ) : "Active"         ,  ( 2, displaytext ) : "Remove Element" ,  ( 2, icon        ) : "aimms-minus"    ,
+					  ( 2, procedure   ) : "RemoveElementSc",  ( 2, state       ) : "Active"          }
+				}
+			}
+			StringParameter actionsSf {
+				IndexDomain: (webui::indexPageExtension, webui::indexWidgetActionSpec);
+				Definition: {
+					data 
+					{ ( 1, displaytext ) : "Add Element"    ,  ( 1, icon        ) : "aimms-plus"     ,  ( 1, procedure   ) : "AddElementSf"   ,
+					  ( 1, state       ) : "Active"         ,  ( 2, displaytext ) : "Remove Element" ,  ( 2, icon        ) : "aimms-minus"    ,
+					  ( 2, procedure   ) : "RemoveElementSf",  ( 2, state       ) : "Active"          }
+				}
+			}
+			StringParameter input_file {
+				Property: NoSave;
+			}
+			ElementParameter currentSc {
+				Range: Sc;
+			}
+			ElementParameter currentSf {
+				Range: Sf;
+			}
+			Procedure AddElementSc {
+				Body: {
+					newElement := formatString("%n", card(Sc) + 1);
+					ep_c := StringToElement(Sc, newElement, 1);
+				}
+				StringParameter newElement;
+			}
+			Procedure RemoveElementSc {
+				Body: {
+					Sc := Sc - {currentSc};
+					currentSc := first(sc);
+				}
+			}
+			Procedure AddElementSf {
+				Body: {
+					newElement := formatString("%n", card(Sf) + 1);
+					ep_f := StringToElement(Sf, newElement, 1);
+				}
+				StringParameter newElement;
+			}
+			Procedure RemoveElementSf {
+				Body: {
+					Sf := Sf - {currentSf};
+					currentSf := first(sf);
+				}
+			}
+		}
+		Section GUI_Optimize {
+			StringParameter ActionRunOptimization {
+				IndexDomain: webui::indexPageActionSpec;
+				Property: NoSave;
+				Definition: {
+					{ 
+					'displaytext' : "Run"                ,  
+					'icon'        : "aimms-play4"             ,
+					'procedure'   : "MainExecution"   , 
+					'state'       : "Active"
+					}
+				}
+			}
+			Parameter run_time {
+				Range: nonnegative;
+				Unit: s;
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+		}
+		Section GUI_Dialog_Message {
+			StringParameter dialog_title;
+			StringParameter dialog_message;
+			Procedure nothing;
+		}
+	}
+	Section Mathematical_Model {
+		Section MM_Sets {
+			Set MM_Sc {
+				SubsetOf: Sc;
+				Index: mm_c;
+			}
+			Set MM_Sf {
+				SubsetOf: Sf;
+				Index: mm_f;
+			}
+			Parameter MM_m {
+				Range: integer;
+				InitialData: 0;
+				webui::FlagsIdentifier: GUI_ReadOnly;
+			}
+			Parameter MM_card_Sc {
+				Range: integer;
+				Property: NoSave;
+				Definition: card(MM_Sc);
+			}
+			Parameter MM_card_Sf {
+				Range: integer;
+				Property: NoSave;
+				Definition: card(MM_Sf);
+			}
+		}
+		Section MM_LP {
+			Section LP_Domains {
+				Property: NoSave;
+				DeclarationSection DOM_Vars {
+					Parameter DOM_x {
+						IndexDomain: (i, j);
+						Range: binary;
+						Definition: {
+							1 $ (val(i) <= MM_m
+							        and val(j) <= card(Alphabet))
+						}
+					}
+					Parameter DOM_y {
+						IndexDomain: (k, s);
+						Range: binary;
+						Definition: {
+							1 $ (val(s) <= card(MM_Sc)
+							        and val(k) <= StringLength(string_c(first(c | ord(c) = s))) - m + 1)
+						}
+					}
+				}
+				DeclarationSection DOM_Cons {
+					Parameter P13 {
+						IndexDomain: i;
+						Range: binary;
+						Definition: 1 $ (val(i) <= MM_m);
+					}
+					Parameter P14 {
+						IndexDomain: (s, k);
+						Range: binary;
+						Definition: {
+							1 $ (val(s) <= card(MM_Sc)
+							        and val(k) > 0 
+							        and val(k) <= active_string_size_sc(s) - MM_m + 1)
+						}
+					}
+					Parameter P15 {
+						IndexDomain: (s, k);
+						Range: binary;
+						Definition: {
+							1 $ (val(s) <= card(MM_Sf)
+							        and val(k) > 0 
+							        and val(k) <= active_string_size_sf(s) - MM_m + 1)
+						}
+					}
+					Parameter P16 {
+						IndexDomain: (s);
+						Range: binary;
+						Definition: 1 $ (val(s) <= card(MM_Sc));
+					}
+				}
+			}
+			Section LP_Variables {
+				Variable x {
+					IndexDomain: (i, j) | DOM_x(i, j);
+					Range: [0, 1];
+				}
+				Variable y {
+					IndexDomain: (s,k) | DOM_y(k, s);
+					Range: [0, 1];
+				}
+				Variable dc {
+					Range: [0, kc];
+				}
+				Variable df {
+					Range: [kf, MM_m];
+				}
+			}
+			Section LP_Constraints {
+				Constraint C13 {
+					IndexDomain: i | P13(i);
+					Definition: {
+						sum(j | j <= MM_m, x(i, j))
+						=
+						1
+					}
+				}
+				Constraint C14 {
+					IndexDomain: (s, k) | P14(s, k);
+					Definition: {
+						MM_m
+						-
+						sum(i | val(i) <= MM_m,
+						        x(i, ord_letter_sc(s, k+val(i))))
+						
+						<=
+						
+						dc
+						+
+						MM_m * (1 - y(s, k))
+					}
+				}
+				Constraint C15 {
+					IndexDomain: (s,k) | P15(s, k);
+					Definition: {
+						MM_m
+						-
+						sum(i | val(i) <= MM_m,
+						        x(i, ord_letter_sf(s, k+val(i))))
+						
+						<= 
+						
+						df
+					}
+				}
+				Constraint C16 {
+					IndexDomain: s | P16(s);
+					Definition: {
+						sum(k | k <= (active_string_size_sc(s) - m + 1),
+						    y(s, k))
+						
+						>=
+						
+						1
+					}
+				}
+				Constraint C17 {
+					Definition: {
+						dc
+						<=
+						kc
+					}
+				}
+				Constraint C18 {
+					Definition: {
+						df
+						>=
+						kf
+					}
+				}
+			}
+			Section LP_MM {
+				MathematicalProgram F2 {
+					Objective: z;
+					Direction: minimize;
+					Constraints: MM_LP_Constraints;
+					Variables: MM_LP_Variables;
+					Type: LP;
+				}
+				Variable z {
+					Range: free;
+					Property: NoSave;
+					Definition: dc - df;
+				}
+				Set MM_LP_Constraints {
+					SubsetOf: AllConstraints;
+					Definition: AllConstraints*MM_LP;
+				}
+				Set MM_LP_Variables {
+					SubsetOf: AllVariables;
+					Definition: AllVariables*MM_LP;
+				}
+			}
+		}
+		Section MM_ILP {
+			Section ILP_Variables {
+				Variable ILP_x {
+					IndexDomain: (i, j) | DOM_x(i, j);
+					Range: binary;
+				}
+				Variable ILP_y {
+					IndexDomain: (s,k) | DOM_y(k, s);
+					Range: binary;
+				}
+				Variable ILP_dc {
+					Range: {
+						{0..kc}
+					}
+				}
+				Variable ILP_df {
+					Range: {
+						{kf..MM_m}
+					}
+				}
+			}
+			Section ILP_Constraints {
+				Constraint ILP_C13 {
+					IndexDomain: i | P13(i);
+					Definition: {
+						sum(j | j <= MM_m, ILP_x(i, j))
+						=
+						1
+					}
+				}
+				Constraint ILP_C14 {
+					IndexDomain: (s, k) | P14(s, k);
+					Definition: {
+						MM_m
+						-
+						sum(i | val(i) <= MM_m,
+						        ILP_x(i, ord_letter_sc(s, k+val(i))))
+						
+						<=
+						
+						ILP_dc
+						+
+						MM_m * (1 - ILP_y(s, k))
+					}
+				}
+				Constraint ILP_C15 {
+					IndexDomain: (s,k) | P15(s, k);
+					Definition: {
+						MM_m
+						-
+						sum(i | val(i) <= MM_m,
+						        ILP_x(i, ord_letter_sf(s, k+val(i))))
+						
+						<= 
+						
+						ILP_df
+					}
+				}
+				Constraint ILP_C16 {
+					IndexDomain: s | P16(s);
+					Definition: {
+						sum(k | k <= (active_string_size_sc(s) - m + 1),
+						    ILP_y(s, k))
+						
+						>=
+						
+						1
+					}
+				}
+				Constraint ILP_C17 {
+					Definition: {
+						ILP_dc
+						<=
+						kc
+					}
+				}
+				Constraint ILP_C18 {
+					Definition: {
+						ILP_df
+						>=
+						kf
+					}
+				}
+			}
+			Section ILP_MM {
+				MathematicalProgram ILP_F2 {
+					Objective: ILP_z;
+					Direction: minimize;
+					Constraints: MM_ILP_Constraints;
+					Variables: MM_ILP_Variables;
+					Type: Automatic;
+				}
+				Variable ILP_z {
+					Range: free;
+					Property: NoSave;
+					Definition: ILP_dc - ILP_df;
+				}
+				Set MM_ILP_Constraints {
+					SubsetOf: AllConstraints;
+					Definition: AllConstraints*ILP_MM;
+				}
+				Set MM_ILP_Variables {
+					SubsetOf: AllVariables;
+					Definition: AllVariables*ILP_MM;
+				}
+			}
+		}
+	}
+	Section Solving_Strategies {
+		Section Strategies_Procedures {
+			Section RA {
+				Procedure Algorithm_RA {
+					Body: {
+						solve F2;
+						
+						for i do 
+						    x(i, j) := 1 $ (x(i, j) = max(k, x(i, k)));
+						endfor;
+						
+						target_string := sum((i, j) | x(i, j),
+						        formatString("%e", first(Alphabet) + j -1));
+						
+						
+						!---  Captura informações da solução ----------------------------------------
+						solver_status := F2.SolverStatus;
+						model_status := F2.ProgramStatus;
+						number_of_constraints := F2.NumberOfConstraints;
+						number_of_integer_variables := F2.NumberOfIntegerVariables;
+						number_of_linear_variables :=  F2.NumberOfVariables - number_of_integer_variables;
+						number_of_non_zeros := F2.NumberOfNonzeros;
+						final_gap := abs(1 - (F2.Objective /$ F2.bestbound));
+						objective_function := F2.bestbound;
+					}
+				}
+			}
+			Section BB_Exact {
+				Procedure Algorithm_BBExact {
+					Body: {
+						solve ILP_F2;
+						
+						for i do 
+						    x(i, j) := 1 $ (x(i, j) = max(k, x(i, k)));
+						endfor;
+						
+						target_string := sum((i, j) | x(i, j),
+						        formatString("%e", first(Alphabet) + j -1));
+						
+						
+						!---  Captura informações da solução ----------------------------------------
+						solver_status := ILP_F2.SolverStatus;
+						model_status := ILP_F2.ProgramStatus;
+						number_of_constraints := ILP_F2.NumberOfConstraints;
+						number_of_integer_variables := ILP_F2.NumberOfIntegerVariables;
+						number_of_linear_variables :=  ILP_F2.NumberOfVariables - number_of_integer_variables;
+						number_of_non_zeros := ILP_F2.NumberOfNonzeros;
+						final_gap := abs(1 - (ILP_F2.Objective /$ ILP_F2.bestbound));
+						objective_function := ILP_F2.bestbound;
+					}
+				}
+			}
+			Section LPBN_VNS {
+				Parameter time_limit_lpbn_vns {
+					Range: nonnegative;
+					Unit: s;
+					Definition: 300;
+				}
+				Parameter enabled_lpbn_vns {
+					Range: binary;
+					Property: NoSave;
+					Definition: 1 $ (strategy('(ILPBN-VNS) ILP-based neighbourhoods') = 1);
+				}
+				Parameter N_size {
+					Range: integer;
+					InitialData: 3;
+				}
+			}
+			Procedure RunStrategy {
+				Body: {
+					if strategy('(RA) Rounding Algorithm') then
+					    Algorithm_RA;
+					elseif strategy('(B&B) Exact') then
+					    Algorithm_BBExact;
+					endif;
+				}
+			}
+		}
+		Section Problems_Procedures {
+			Section Conf_DSSSP {
+				Procedure ConfigureDSSSP {
+					Body: {
+						MM_m := m;
+						MM_Sc := Sc_Active;
+						MM_Sf := Sf_Active;
+					}
+				}
+			}
+			Section Conf_DSSP {
+				Procedure ConfigureDSSP {
+					Body: {
+						MM_m := StringLength(string_c(first(Sc_Active)));
+						MM_Sc := Sc_Active;
+						MM_Sf := Sf_Active;
+					}
+				}
+			}
+			Section Conf_CSP {
+				Procedure ConfigureCSP {
+					Body: {
+						MM_m := StringLength(string_c(first(Sc_Active)));
+						MM_Sc := Sc_Active;
+						MM_Sf := {};
+					}
+				}
+			}
+			Section Conf_CSSP {
+				Procedure ConfigureCSSP {
+					Body: {
+						MM_m := m;
+						MM_Sc := Sc_Active;
+						MM_Sf := {};
+					}
+				}
+			}
+			Section Conf_FSP {
+				Procedure ConfigureFSP {
+					Body: {
+						MM_m := StringLength(string_f(first(Sf_Active)));
+						MM_Sc := {};
+						MM_Sf := Sf_Active;
+					}
+				}
+			}
+			Section Conf_FSSP {
+				Procedure ConfigureFSSP {
+					Body: {
+						MM_m := m;
+						MM_Sc := {};
+						MM_Sf := Sf_Active;
+					}
+				}
+			}
+			Procedure ConfigureProblem {
+				Body: {
+					if problem('(CSP) Closest String Problem') then
+					    ConfigureCSP;
+					elseif problem('(CSSP) Closest Substring Problem') then
+					    ConfigureCSSP;
+					elseif problem('(FSP) Furthest String Problem') then
+					    ConfigureFSP;
+					elseif problem('(FSSP) Furthest Substring Problem') then
+					    ConfigureFSSP;
+					elseif problem('(DSSP) Distinguishing String Selection Problem') then
+					    ConfigureDSSP;
+					elseif problem('(DSSSP) Distinguishing Substring Selection Problem') then
+					    ConfigureDSSSP;
+					endif;
+				}
+			}
+		}
+	}
+	Procedure MainInitialization {
+		Comment: "Add initialization statements here that do NOT require any library being initialized already.";
+	}
+	Procedure PostMainInitialization {
+		Comment: {
+			"Add initialization statements here that require that the libraries are already initialized properly,
+			or add statements that require the Data Management module to be initialized."
+		}
+	}
+	Procedure MainExecution {
+		Body: {
+			stopwatch::pr_start() ;
+			
+			webui::SetProgressMessage("Solving...");
+			
+			CurrentSolver(IndexMathematicalProgrammingTypes) := selected_solver;
+			
+			if enable_time_limit then
+			    OptionSetValue("time_limit",time_limit/1[s] );
+			else
+			    OptionSetValue("time_limit",2147483647);
+			endif;
+			
+			OptionSetValue("MIP_relative_optimality_tolerance", min_gap);
+			
+			ConfigureProblem;
+			RunStrategy;
+			run_time := stopwatch::fnc_elapsed();
+		}
+	}
+	Procedure PreMainTermination {
+		Body: {
+			return DataManagementExit();
+		}
+		Comment: {
+			"Add termination statements here that require all libraries to be still alive.
+			Return 1 if you allow the termination sequence to continue.
+			Return 0 if you want to cancel the termination sequence."
+		}
+	}
+	Procedure MainTermination {
+		Body: {
+			return 1;
+		}
+		Comment: {
+			"Add termination statements here that do not require all libraries to be still alive.
+			Return 1 to allow the termination sequence to continue.
+			Return 0 if you want to cancel the termination sequence.
+			It is recommended to only use the procedure PreMainTermination to cancel the termination sequence and let this procedure always return 1."
+		}
+	}
+	Section Quantities_and_Units {
+		Comment: {
+			"This section contains all the units and quantities that are added automatically by AIMMS.
+			It is recommended to declare all your quantities here."
+		}
+		Quantity SI_Time_Duration {
+			BaseUnit: s;
+			Conversions: {
+				minute->s : #-># * 60,
+				tick->s : #-># / 100
+			}
+			Comment: {
+				"Expresses the value for the duration of periods.
+				
+				The unit s has been added automatically because it is a required unit for AimmsWebUI.
+				
+				The unit minute has been added automatically because it is a required unit for AimmsWebUI.
+				
+				The unit tick has been added automatically because it is a required unit for Library StopwatchLibrary."
+			}
+		}
+	}
+}
