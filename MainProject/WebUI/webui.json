@@ -367,7 +367,7 @@
         "componentName": "Grid",
         "props": {
           "gridTemplateColumns": "75% 25%",
-          "gridTemplateRows": "5% 5% 5% 5% 60% 5% 40% 40%",
+          "gridTemplateRows": "5% 5% 5% 5% 80% 5% 60% 60%",
           "gridTemplateAreas": "\"area area\" \"area-a area-a2\" \"area-b area-b2\" \"area-c area-c\" \"area-d area-d\" \"area-e area-e\" \"area-f area-f\" \"area-g area-g\""
         },
         "items": [
@@ -2028,26 +2028,25 @@
                 "value": "mm_c"
               }
             ]
+          },
+          {
+            "identifier": "total_mismatchings_c",
+            "slice": [
+              {
+                "index": "c_actv",
+                "type": "subset",
+                "value": "mm_c"
+              }
+            ]
           }
         ],
         "contents": [
           "alignment_c",
           "total_matchings_c",
-          "pg_total_mismatchings_c",
+          "total_mismatchings_c",
           "alignment_substring_c",
           "string_c"
-        ],
-        "prefix": "aimms",
-        "partition": {
-          "rowHeader": [
-            "mm_c"
-          ],
-          "colHeader": [
-            "<IDENTIFIER-SET>"
-          ],
-          "aggregated": []
-        },
-        "numdecimals": 0
+        ]
       }
     },
     "contents.numdecimals": {
@@ -2098,6 +2097,13 @@
           "type": "rowHeader",
           "colKey": "mm_c",
           "width": 19.58
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "total_mismatchings_c"
+          },
+          "width": 17.61
         }
       ]
     },

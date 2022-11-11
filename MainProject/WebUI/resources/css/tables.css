@@ -9,7 +9,7 @@
     color: #354E8A;
     font-family: Calibri,Roboto,Arial,Helvetica,sans-serif;
     border: none;
-    text-align: center;
+    text-align: center !important;
 }
 
 /* Título dos cabeçalhos */   

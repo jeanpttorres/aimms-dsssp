@@ -1,1 +1,15 @@
-﻿There is 71.074 Mb in use.
+﻿There is 71.957 Mb in use.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 1 in user-defined function section "Algorithm_RA":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".

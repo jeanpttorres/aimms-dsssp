@@ -202,3 +202,8 @@ html.theme-aimms .tag-download .right-box {
   background-color: #061a52 !important;
   font-size: 18px !important;
 }
+
+html.theme-aimms .tag-download .right-box .prepare-download:before, html.theme-aimms .tag-upload .right-box .prepare-download:before
+{
+  background-color: transparent;
+}
