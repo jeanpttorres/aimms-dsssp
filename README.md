@@ -36,10 +36,13 @@ TO-DO
 # How to Use
 
 * Open the AIMMS Software
+
 * Open the DSSSP Project: File->Open Project
+
 * The system should open on your browser
 
 # Dummy Execution
 
 * Choose the Input Step and click "+" on the button "Upload TXT". Choose the file located on data/text_input_example.dssp and, after uploading it, click on the button again in order to process the file. 
+
 * Choose the Optimization step and click on the "PLAY" button, on the bottom-right corner. 
