@@ -1,5 +1,882 @@
 A DataChangeMonitor with ID DataChangeMonitor001 does not exist.
+Warning at line 1 in the definition of set "Sc_Active".
+The parameter "active_c" is not initialized (default values are used).
+Warning at line 1 in the definition of set "Sf_Active".
+The parameter "active_f" is not initialized (default values are used).
+Warning at line 1 in the definition of set "Indexes".
+The parameter "m" is not initialized (default values are used).
+Warning at line 1 in the definition of set "Indexes".
+The string parameter "string_c" is not initialized (default values are used).
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Execution error while evaluating the definition of set "Indexes".
+Unable to create a range from 1 to 0 with an increment of 1.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Semantic error at line 7 in user-defined function section "FirstImprovement", column 7.
+The RHS expression (Indexes) does not share the same root set with the LHS expression (N).
+Semantic error at line 7 in user-defined function section "FirstImprovement", column 7.
+The RHS expression (Indexes) does not share the same root set with the LHS expression (N).
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Syntax error at line 19 in user-defined function section "Algorithm_ILPBN_VNS", column 9.
+The symbol "NeighbourhoodChange" is not expected.
+Warning at line 1 in user-defined function section "FirstImprovement".
+The string parameter "t2_string" is not initialized (default values are used).
 Warning at line 1 in user-defined function section "Algorithm_RA".
 The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
 Warning at line 1 in user-defined function section "Algorithm_RA".
 The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 1 in user-defined function section "Algorithm_RA".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Syntax error at line 5 in user-defined function section "FirstImprovement".
+The symbol "and" is not expected.
+Syntax error at line 5 in user-defined function section "FirstImprovement".
+The symbol "and" is not expected.
+Domain violation.
+The scope of index "N" has not been specified.
+Domain violation.
+The scope of index "N" has not been specified.
+Semantic error at line 1 in the default of parameter "min_n", column 1.
+The identifier "max_integer" has not been declared.
+Semantic error at line 1 in the default of parameter "min_n", column 1.
+The identifier "max_int" has not been declared.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 8 in user-defined function section "FirstImprovement".
+You have interrupted execution.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Syntax error at line 14 in user-defined function section "FirstImprovement", column 43.
+The symbol "}" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Syntax error at line 19 in user-defined function section "FirstImprovement", column 1.
+The symbol "endwhile" is not expected.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Semantic error.
+The attributes "index domain" and "parameter" cannot be specified both for local set "N".
+Semantic error at line 1 in the index domain of local set "N".
+The local element parameter "sy" is not an index.
+Semantic error at line 2 in the index domain of local set "N", column 1.
+The local element parameter "sy" with dimension zero cannot be used as an index.
+Semantic error at line 1 in the index domain of local set "N".
+The local element parameter "sy" is not an index.
+Semantic error at line 2 in the index domain of local set "N", column 1.
+The local element parameter "sy" with dimension zero cannot be used as an index.
+Semantic error at line 1 in the index domain of local set "N".
+The local element parameter "sy" is not an index.
+Semantic error at line 2 in the index domain of local set "N", column 1.
+The local element parameter "sy" with dimension zero cannot be used as an index.
+Semantic error at line 1 in the index of local set "N", column 1.
+The local element parameter "sy" has already been declared as a index.  Please use another name.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Semantic error at line 18 in user-defined function section "FirstImprovement", column 34.
+The first argument is of type element while expecting an argument of type set.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 22 in user-defined function section "Algorithm_ILPBN_VNS".
+You have interrupted execution.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Syntax error at line 20 in user-defined function section "FirstImprovement", column 65.
+The symbol ";" is not expected.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 49 in user-defined function section "Run_VNS_T3".
+You have interrupted execution.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 25.
+The argument of the val function must have data type string or element.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error at line 31 in user-defined function section "Algorithm_ILPBN_VNS", column 1.
+Missing semicolon at the end of a statement list.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Semantic error at line 12 in user-defined function section "Algorithm_ILPBN_VNS", column 31.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 10 in user-defined function section "Shaking", column 16.
+The identifier "alphabet_size" has not been declared.
+Warning at line 6 in user-defined function section "RunStrategy".
+You have interrupted execution.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS".
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2".  This may lead to non-unique shadow prices.  For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Domain violation.
+The scope of index "i" has not been specified.
+Domain violation.
+The scope of index "i" has not been specified.
+Domain violation.
+The scope of index "i" has not been specified.
+Domain violation.
+The scope of index "i" has not been specified.
+Warning at line 6 in user-defined function section "RunStrategy".
+You have interrupted execution.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Domain violation at line 10 in user-defined function section "Algorithm_ILPBN_VNS", column 59.
+The scope of index "j" has not been specified.
+Domain violation at line 10 in user-defined function section "Algorithm_ILPBN_VNS", column 59.
+The scope of index "j" has not been specified.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 9 in user-defined function section "Algorithm_ILPBN_VNS", column 49.
+The symbol ";" is not expected.
+Syntax error at line 10 in user-defined function section "Algorithm_ILPBN_VNS", column 68.
+Missing semicolon at the end of a statement list.
+Syntax error at line 10 in user-defined function section "Algorithm_ILPBN_VNS", column 68.
+Missing semicolon at the end of a statement list.
+Warning at line 20 in user-defined function section "Run_VNS_T3".
+You have interrupted execution.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Warning at line 6 in user-defined function section "RunStrategy".
+You have interrupted execution.
+Warning at line 46 in user-defined function section "Run_VNS_T3".
+You have interrupted execution.
+Syntax error.
+The symbol "," is not expected.
+Syntax error.
+The symbol "," is not expected.
+Syntax error.
+The symbol "," is not expected.
+Syntax error.
+The symbol "," is not expected.
+Syntax error.
+The symbol "," is not expected.
+Syntax error.
+The symbol "," is not expected.
+Warning at line 26 in user-defined function section "Run_VNS_T3".
+You have interrupted execution.
+Warning at line 18 in user-defined function section "Run_VNS_T3".
+You have interrupted execution.
+Warning at line 6 in user-defined function section "RunStrategy".
+You have interrupted execution.
+Warning at line 1 in user-defined function section "Algorithm_BBExact".
+You have interrupted execution.
+Warning at line 1 in user-defined function section "Algorithm_BBExact".
+After 3790918 iterations CBC 2.9 found an integer solution to ILP_F2. The minimum found for ILP_z is -2.
+Interrupt error at line 1 in user-defined function section "Algorithm_BBExact".
+External interrupt encountered, while executing statement on line 1 in user-defined function section "Algorithm_BBExact".  Data may not be consistent.
+Warning at line 1 in user-defined function section "Algorithm_BBExact".
+After 4452660 iterations CBC 2.9 terminated and ILP_F2 is still infeasible.
+Warning at line 23 in user-defined function section "Run_VNS_T3".
+You have interrupted execution.
+Interrupt error at line 23 in user-defined function section "Run_VNS_T3".
+External interrupt encountered, while executing statement on line 23 in user-defined function section "Run_VNS_T3".  Data may not be consistent.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error at line 15 in user-defined function section "Shaking", column 39.
+The symbol "," is not expected.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error.
+Unexpected end of this filepiece.
+Syntax error at line 2 in user-defined function section "Shaking", column 1.
+The symbol "cont" is not expected.
+Syntax error at line 2 in user-defined function section "Shaking", column 1.
+The symbol "cont" is not expected.
+Syntax error at line 2 in user-defined function section "Shaking", column 1.
+The symbol "cont" is not expected.
+Syntax error at line 2 in user-defined function section "Shaking", column 1.
+The symbol "cont" is not expected.
+Syntax error at line 2 in user-defined function section "Shaking", column 1.
+The symbol "cont" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error at line 4 in user-defined function section "InitializeT2String", column 29.
+The symbol ";" is not expected.
+Syntax error at line 4 in user-defined function section "InitializeT2String", column 29.
+The symbol ";" is not expected.
+Syntax error at line 4 in user-defined function section "InitializeT2String", column 29.
+The symbol ";" is not expected.
+Syntax error at line 4 in user-defined function section "InitializeT2String", column 29.
+The symbol ";" is not expected.
+Syntax error at line 4 in user-defined function section "InitializeT2String", column 29.
+The symbol ";" is not expected.
+Syntax error at line 5 in user-defined function section "InitializeT2String", column 10.
+The symbol "==" is not expected.
+Syntax error at line 4 in user-defined function section "InitializeT2String", column 5.
+The symbol "r" is not expected.
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+Semantic error at line 7 in user-defined function section "LpShaking", column 11.
+The data type numeric expression m cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 7 in user-defined function section "LpShaking", column 11.
+The data type numeric expression m cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 7 in user-defined function section "LpShaking", column 11.
+The data type numeric expression m cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Semantic error at line 20 in user-defined function section "LpShaking", column 31.
+The first argument is of type numeric while expecting an argument of type element.
+Semantic error at line 20 in user-defined function section "LpShaking", column 31.
+The first argument is of type numeric while expecting an argument of type element.
+Semantic error at line 20 in user-defined function section "LpShaking", column 31.
+The first argument is of type numeric while expecting an argument of type element.
+Semantic error at line 20 in user-defined function section "LpShaking", column 31.
+The first argument is of type numeric while expecting an argument of type element.
+Semantic error at line 20 in user-defined function section "LpShaking", column 31.
+The first argument is of type numeric while expecting an argument of type element.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 177 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 166 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 193 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 188 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 192 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 186 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 164 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 205 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 225 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 187 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 221 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 206 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 231 iterations CBC 2.9 concluded that F2 is infeasible.
+The maximum of 20 warnings reached, further warnings suppressed.  See also option maximal_number_of_warnings_reported
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 242 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 242 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 225 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 270 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 227 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 257 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 253 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 253 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 253 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 253 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 253 iterations CBC 2.9 concluded that F2 is infeasible.
+Syntax error at line 8 in user-defined function section "RunStrategy".
+Unexpected end of this filepiece.
+Syntax error at line 8 in user-defined function section "RunStrategy".
+Unexpected end of this filepiece.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 161 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 230 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 146 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 185 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 189 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 175 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 172 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 172 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 196 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 196 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 185 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 202 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 202 iterations CBC 2.9 concluded that F2 is infeasible.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Syntax error.
+The symbol ":=" is not expected.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 209 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 213 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 183 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 179 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 180 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 187 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 183 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 219 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 219 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 242 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 204 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+The maximum of 20 warnings reached, further warnings suppressed.  See also option maximal_number_of_warnings_reported
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 211 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 211 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 211 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 211 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 211 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 253 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 253 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 263 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 263 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 263 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 263 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 263 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 263 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 263 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 209 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 209 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 209 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 246 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 246 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA".
+After 246 iterations CBC 2.9 concluded that F2 is infeasible.
+Input/output error at line 7 in user-defined function section "pro::LibraryTermination".
+The user function library C:\Users\JeanPatrick\AppData\Local\AIMMS\PRO\\AimmsProLibrary-2.0\x64\AimmsPROClient.dll cannot be found.
+Input/output error at line 7 in user-defined function section "pro::LibraryTermination".
+The library C:\Users\JeanPatrick\AppData\Local\AIMMS\PRO\\AimmsProLibrary-2.0\x64\AimmsPROClient.dll has not been loaded because: Error loading library : Parâmetro incorreto.
+Execution error at line 7 in user-defined function section "pro::LibraryTermination".
+The dll for external procedure "pro::management::IsInitialized" has not been found.

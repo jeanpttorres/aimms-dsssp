@@ -1651,14 +1651,18 @@
       "aimms": {
         "contents": [
           "time_limit_lpbn_vns",
-          "N_size"
+          "n_size",
+          "time_limit_improvement",
+          "max_shaking_positions"
         ]
       }
     },
     "contents.displaydomain": {
       "literal": {
         "time_limit_lpbn_vns": "enabled_lpbn_vns",
-        "n_size": "enabled_lpbn_vns"
+        "n_size": "enabled_lpbn_vns",
+        "time_limit_improvement": "enabled_lpbn_vns",
+        "max_shaking_positions": "enabled_lpbn_vns"
       }
     },
     "contents.numdecimals": {

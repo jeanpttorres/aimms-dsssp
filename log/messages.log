@@ -1,4 +1,79 @@
-﻿There is 71.957 Mb in use.
+﻿There is 71.285 Mb in use.
+Warning: The parameter "active_c" is not initialized (default values are used).
+Warning at line 1 in the definition of set "Sc_Active":
+The parameter "active_c" is not initialized (default values are used).
+Warning: The parameter "active_f" is not initialized (default values are used).
+Warning at line 1 in the definition of set "Sf_Active":
+The parameter "active_f" is not initialized (default values are used).
+Warning: The parameter "m" is not initialized (default values are used).
+Warning at line 1 in the definition of set "Indexes":
+The parameter "m" is not initialized (default values are used).
+Warning: The string parameter "string_c" is not initialized (default values are used).
+Warning at line 1 in the definition of set "Indexes":
+The string parameter "string_c" is not initialized (default values are used).
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+Unable to create a range from 1 to 0 with an increment of 1.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The RHS expression (Indexes) does not share the same root set with the LHS expression (N).
+The RHS expression (Indexes) does not share the same root set with the LHS expression (N).
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+The symbol "NeighbourhoodChange" is not expected.
+Warning at line 1 in user-defined function section "FirstImprovement":
+The string parameter "t2_string" is not initialized (default values are used).
+Warning: The string parameter "t2_string" is not initialized (default values are used).
+
 Warning at line 1 in user-defined function section "Algorithm_RA":
 The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
 This may lead to non-unique shadow prices. 
@@ -13,3 +88,702 @@ For more information regarding potential causes and consequences, see the help a
 Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
 This may lead to non-unique shadow prices. 
 For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 1 in user-defined function section "Algorithm_RA":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+The identifier "max_integer" has not been declared.
+The identifier "max_int" has not been declared.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 8 in user-defined function section "FirstImprovement":
+You have interrupted execution.
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: You have interrupted execution.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+The symbol "}" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The first argument is of type element while expecting an argument of type set.
+The symbol "endwhile" is not expected.
+The symbol "endwhile" is not expected.
+The first argument is of type element while expecting an argument of type set.
+The first argument is of type element while expecting an argument of type set.
+The first argument is of type element while expecting an argument of type set.
+The first argument is of type element while expecting an argument of type set.
+The first argument is of type element while expecting an argument of type set.
+The first argument is of type element while expecting an argument of type set.
+The attributes "index domain" and "parameter" cannot be specified both for local set "N".
+The local element parameter "sy" is not an index.
+The local element parameter "sy" with dimension zero cannot be used as an index.
+The local element parameter "sy" is not an index.
+The local element parameter "sy" with dimension zero cannot be used as an index.
+The local element parameter "sy" is not an index.
+The local element parameter "sy" with dimension zero cannot be used as an index.
+The local element parameter "sy" has already been declared as a index. 
+Please use another name.
+The first argument is of type element while expecting an argument of type set.
+The first argument is of type element while expecting an argument of type set.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Execution error while evaluating the assignment statement for "r2" on line 16 in user-defined function section "FirstImprovement".
+Uniform(1, 1)  error: The second argument (maximum) should be greater than the first argument (minimum).
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 22 in user-defined function section "Algorithm_ILPBN_VNS":
+You have interrupted execution.
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning: You have interrupted execution.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+The symbol ";" is not expected.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 49 in user-defined function section "Run_VNS_T3":
+You have interrupted execution.
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: You have interrupted execution.
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The argument of the val function must have data type string or element.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+The data type numeric expression n_size cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The identifier "alphabet_size" has not been declared.
+
+Warning at line 6 in user-defined function section "RunStrategy":
+You have interrupted execution.
+
+Warning: You have interrupted execution.
+
+Warning at line 1 in user-defined function section "Algorithm_RA":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning at line 2 in user-defined function section "Algorithm_ILPBN_VNS":
+The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+Warning: The rows "C15(1,21)" and "C15(3,21)" are equal in the generated mathematical program "F2". 
+This may lead to non-unique shadow prices. 
+For more information regarding potential causes and consequences, see the help associated with the option "Warning_duplicate_row".
+
+Warning at line 6 in user-defined function section "RunStrategy":
+You have interrupted execution.
+
+Warning: You have interrupted execution.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The scope of index "j" has not been specified.
+The scope of index "j" has not been specified.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+Missing semicolon at the end of a statement list.
+Missing semicolon at the end of a statement list.
+
+
+
+
+
+
+
+Warning at line 20 in user-defined function section "Run_VNS_T3":
+You have interrupted execution.
+Warning: You have interrupted execution.
+
+
+Warning at line 6 in user-defined function section "RunStrategy":
+You have interrupted execution.
+
+Warning: You have interrupted execution.
+
+
+Warning at line 46 in user-defined function section "Run_VNS_T3":
+You have interrupted execution.
+Warning: You have interrupted execution.
+
+
+
+
+Warning at line 26 in user-defined function section "Run_VNS_T3":
+You have interrupted execution.
+Warning: You have interrupted execution.
+Warning at line 18 in user-defined function section "Run_VNS_T3":
+You have interrupted execution.
+Warning: You have interrupted execution.
+Warning at line 6 in user-defined function section "RunStrategy":
+You have interrupted execution.
+
+Warning: You have interrupted execution.
+
+
+
+
+
+Warning at line 1 in user-defined function section "Algorithm_BBExact":
+You have interrupted execution.
+Warning at line 1 in user-defined function section "Algorithm_BBExact":
+After 3790918 iterations CBC 2.9 found an integer solution to ILP_F2.
+The minimum found for ILP_z is -2.
+Warning: You have interrupted execution.
+Warning: After 3790918 iterations CBC 2.9 found an integer solution to ILP_F2.
+The minimum found for ILP_z is -2.
+External interrupt encountered, while executing statement on line 1 in user-defined function section "Algorithm_BBExact". 
+Data may not be consistent.
+Warning at line 1 in user-defined function section "Algorithm_BBExact":
+After 4452660 iterations CBC 2.9 terminated and ILP_F2 is still infeasible.
+Warning: After 4452660 iterations CBC 2.9 terminated and ILP_F2 is still infeasible.
+Warning at line 23 in user-defined function section "Run_VNS_T3":
+You have interrupted execution.
+Warning: You have interrupted execution.
+External interrupt encountered, while executing statement on line 23 in user-defined function section "Run_VNS_T3". 
+Data may not be consistent.
+
+
+The symbol "," is not expected.
+The symbol "," is not expected.
+The symbol "," is not expected.
+The symbol "," is not expected.
+The symbol "," is not expected.
+The symbol "," is not expected.
+The symbol "," is not expected.
+The symbol "," is not expected.
+The symbol "," is not expected.
+
+
+The symbol "cont" is not expected.
+The symbol "cont" is not expected.
+The symbol "cont" is not expected.
+The symbol "cont" is not expected.
+The symbol "cont" is not expected.
+
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol ";" is not expected.
+The symbol "==" is not expected.
+
+
+The symbol "r" is not expected.
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The mandatory attribute "definition" is missing from constraint "ILP_CADD".
+The data type numeric expression m cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression m cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The data type numeric expression m cannot be turned into an element valued expression (use functions ElementRange/StringToElement or root set Integers).
+The first argument is of type numeric while expecting an argument of type element.
+The first argument is of type numeric while expecting an argument of type element.
+The first argument is of type numeric while expecting an argument of type element.
+The first argument is of type numeric while expecting an argument of type element.
+The first argument is of type numeric while expecting an argument of type element.
+
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 177 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 177 iterations CBC 2.9 concluded that F2 is infeasible.
+
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 166 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 193 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 188 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 192 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 186 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 164 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 205 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 225 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 187 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 221 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 206 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+The maximum of 20 warnings reached, further warnings suppressed. 
+See also option maximal_number_of_warnings_reported
+Warning: After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 166 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 193 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 188 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 192 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 186 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 164 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 199 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 205 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 225 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 187 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 221 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 206 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: The maximum of 20 warnings reached, further warnings suppressed. 
+See also option maximal_number_of_warnings_reported
+
+
+
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 161 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 230 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 146 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 185 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 189 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 175 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 172 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 172 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 196 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 196 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 185 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 202 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 202 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 161 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 230 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 146 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 229 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 185 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 189 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 175 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 172 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 196 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 202 iterations CBC 2.9 concluded that F2 is infeasible.
+
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 209 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 213 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 183 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 179 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 180 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 187 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 183 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 219 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 219 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 242 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 204 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning at line 1 in user-defined function section "Algorithm_RA":
+The maximum of 20 warnings reached, further warnings suppressed. 
+See also option maximal_number_of_warnings_reported
+Warning: After 209 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 213 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 183 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 179 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 190 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 200 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 191 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 180 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 187 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 170 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 219 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 242 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 204 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: After 249 iterations CBC 2.9 concluded that F2 is infeasible.
+Warning: The maximum of 20 warnings reached, further warnings suppressed. 
+See also option maximal_number_of_warnings_reported

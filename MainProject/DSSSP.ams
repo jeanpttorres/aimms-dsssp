@@ -15,6 +15,7 @@ Model Main_DSSSP {
 				Parameter active_c {
 					IndexDomain: c;
 					Range: binary;
+					Default: 0;
 				}
 			}
 			DeclarationSection Sc_Defined {
@@ -1041,6 +1042,10 @@ Model Main_DSSSP {
 				Property: NoSave;
 				Definition: card(MM_Sf);
 			}
+			Parameter MM_fix {
+				IndexDomain: (i,j);
+				Default: maxint;
+			}
 		}
 		Section MM_LP {
 			Section LP_Domains {
@@ -1092,6 +1097,12 @@ Model Main_DSSSP {
 						Range: binary;
 						Definition: 1 $ (val(s) <= card(MM_Sc));
 					}
+					Parameter PADD {
+						IndexDomain: (i,j);
+						Range: binary;
+						Property: NoSave;
+						Definition: 1 $ (nondefault(MM_fix(i, j)));
+					}
 				}
 			}
 			Section LP_Variables {
@@ -1142,7 +1153,7 @@ Model Main_DSSSP {
 						sum(i | val(i) <= MM_m,
 						        x(i, ord_letter_sf(s, k+val(i))))
 						
-						<= 
+						>=
 						
 						df
 					}
@@ -1170,6 +1181,16 @@ Model Main_DSSSP {
 						df
 						>=
 						kf
+					}
+				}
+				Constraint CADD {
+					IndexDomain: (i, j) | PADD(i, j);
+					Definition: {
+						x(i, j)
+						
+						>= 
+						
+						MM_fix(i, j)
 					}
 				}
 			}
@@ -1249,7 +1270,7 @@ Model Main_DSSSP {
 						sum(i | val(i) <= MM_m,
 						        ILP_x(i, ord_letter_sf(s, k+val(i))))
 						
-						<= 
+						>=
 						
 						ILP_df
 					}
@@ -1279,6 +1300,16 @@ Model Main_DSSSP {
 						kf
 					}
 				}
+				Constraint ILP_CADD {
+					IndexDomain: (i,j) | PADD(i, j);
+					Definition: {
+						x(i, j)
+						
+						>= 
+						
+						MM_fix(i, j)
+					}
+				}
 			}
 			Section ILP_MM {
 				MathematicalProgram ILP_F2 {
@@ -1295,11 +1326,11 @@ Model Main_DSSSP {
 				}
 				Set MM_ILP_Constraints {
 					SubsetOf: AllConstraints;
-					Definition: AllConstraints*ILP_MM;
+					Definition: AllConstraints*MM_ILP;
 				}
 				Set MM_ILP_Variables {
 					SubsetOf: AllVariables;
-					Definition: AllVariables*ILP_MM;
+					Definition: AllVariables*MM_ILP;
 				}
 			}
 		}
@@ -1315,9 +1346,11 @@ Model Main_DSSSP {
 						    x(i, j) := 1 $ (x(i, j) = max(k, x(i, k)));
 						endfor;
 						
-						target_string := sum((i, j) | x(i, j),
-						        formatString("%e", first(Alphabet) + j -1));
-						
+						target_string := "";
+						for i | val(i) <= m do
+						    loc_j := first(j | x(i, j) = max(k, x(i, k)));
+						    target_string += formatString("%e", first(Alphabet) + (val(loc_j) -1));
+						endfor;
 						
 						!---  Captura informações da solução ----------------------------------------
 						solver_status := F2.SolverStatus;
@@ -1329,6 +1362,9 @@ Model Main_DSSSP {
 						final_gap := abs(1 - (F2.Objective /$ F2.bestbound));
 						objective_function := F2.bestbound;
 					}
+					ElementParameter loc_j {
+						Range: Indexes;
+					}
 				}
 			}
 			Section BB_Exact {
@@ -1336,12 +1372,10 @@ Model Main_DSSSP {
 					Body: {
 						solve ILP_F2;
 						
-						for i do 
-						    x(i, j) := 1 $ (x(i, j) = max(k, x(i, k)));
-						endfor;
-						
-						target_string := sum((i, j) | x(i, j),
-						        formatString("%e", first(Alphabet) + j -1));
+						target_string := sum((i, j) | ILP_x(i, j) = 1
+						            and i <= m
+						            and j <= alphabetSize,
+						        formatString("%e", first(Alphabet) + (val(j) -1)));
 						
 						
 						!---  Captura informações da solução ----------------------------------------
@@ -1356,20 +1390,858 @@ Model Main_DSSSP {
 					}
 				}
 			}
-			Section LPBN_VNS {
+			Section VNS {
+				Set Neighbourhoods {
+					Index: N, N2;
+					Parameter: ep_n;
+					Property: NoSave;
+					OrderBy: N;
+				}
+				Parameter min_n {
+					IndexDomain: N;
+					Range: nonnegative;
+					Default: maxint;
+					Property: NoSave;
+					Definition: {
+						if ord(N) = n_size then
+						    0
+						else
+						    max_n(first(N2 | ord(N2) = ord(N)+1))
+						endif;
+					}
+				}
+				Parameter max_n {
+					IndexDomain: N;
+					Range: nonnegative;
+					Default: maxint;
+					Property: NoSave;
+					Definition: {
+						if ord(N) = 1 then
+						    1
+						else
+						    (1 / n_size) * (n_size + 1 - ord(N))
+						endif;
+					}
+				}
+				Parameter n_size {
+					Range: integer;
+					InitialData: 3;
+				}
+				Parameter max_shaking_positions {
+					Range: {
+						{2..maxint}
+					}
+					InitialData: 3;
+				}
+				Parameter in_neighbourhood {
+					IndexDomain: (N,i,j);
+					Range: binary;
+					Definition: {
+						1 $ (x(i, j) >= min_n(N)
+						        and x(i, j) <= max_n(N))
+					}
+				}
+				Parameter first_exec {
+					Range: binary;
+				}
 				Parameter time_limit_lpbn_vns {
 					Range: nonnegative;
 					Unit: s;
-					Definition: 300;
+					InitialData: 300;
 				}
-				Parameter enabled_lpbn_vns {
-					Range: binary;
-					Property: NoSave;
-					Definition: 1 $ (strategy('(ILPBN-VNS) ILP-based neighbourhoods') = 1);
+				Parameter time_limit_improvement {
+					Range: nonnegative;
+					Unit: s;
+					InitialData: 6;
 				}
-				Parameter N_size {
-					Range: integer;
-					InitialData: 3;
+				ElementParameter Kn {
+					Range: Neighbourhoods;
+				}
+				Section VNS_T {
+					DeclarationSection vns_target_string {
+						StringParameter t1_string;
+						StringParameter t_symbol_target_string {
+							IndexDomain: i;
+							Property: NoSave;
+						}
+						Parameter t_matching_sc {
+							IndexDomain: (s,k,i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m;
+							Range: binary;
+							Property: NoSave;
+						}
+						Parameter t_matching_sf {
+							IndexDomain: (s,k,i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m;
+							Range: binary;
+							Property: NoSave;
+						}
+						Parameter t_total_matchings_sc {
+							IndexDomain: (s,k) | s <= card(Sc_Active) and k <= active_string_size_sc(s);
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t_total_matchings_sf {
+							IndexDomain: (s,k) | s <= card(Sf_Active) and k <= active_string_size_sf(s);
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t_alignment_sc {
+							IndexDomain: s;
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t_alignment_c {
+							IndexDomain: c_actv;
+							Range: integer;
+							Property: NoSave;
+						}
+						StringParameter t_alignment_substring_c {
+							IndexDomain: c_actv;
+						}
+						StringParameter t_alignment_substring_f {
+							IndexDomain: (f_actv, k) | k <= StringLength(string_f(first(Sf_Active)));
+						}
+						Parameter t_total_matchings_c {
+							IndexDomain: c_actv;
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t_total_mismatchings_c {
+							IndexDomain: c_actv;
+						}
+						Parameter t_total_matchings_f {
+							IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+							Range: integer;
+							Default: maxint;
+							Property: NoSave;
+						}
+						Parameter t_total_mismatchings_f {
+							IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+							Range: integer;
+							Default: maxint;
+							Property: NoSave;
+						}
+						Parameter t1_dc {
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t1_df {
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t1_dc_df {
+							Default: maxint;
+						}
+					}
+					Procedure Run_VNS_T1 {
+						Body: {
+							empty t_symbol_target_string,
+							        t_matching_sc,
+							        t_matching_sf,
+							        t_total_matchings_sc,
+							        t_total_matchings_sf,
+							        t_alignment_sc,
+							        t_alignment_c,
+							        t_alignment_substring_c,
+							        t_alignment_substring_f,
+							        t_total_matchings_c,
+							        t_total_mismatchings_c,
+							        t_total_matchings_f,
+							        t_total_mismatchings_f,
+							        t1_dc,
+							        t1_df;
+							
+							block !SC
+							t_symbol_target_string(i) := Substring(t1_string, i, i);
+							
+							t_matching_sc(s, k, i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m
+							:= 1 $ (t_symbol_target_string(i) = symbol_sc(s, (k + (val(i) - 1))));
+							
+							t_total_matchings_sc(s, k) | s <= card(Sc_Active) and k <= active_string_size_sc(s)
+							:= sum(i | i <= m,  t_matching_sc(s, k, i));
+							
+							t_alignment_sc(s) | s <= card(Sc_Active)
+							:= val(first(k | t_total_matchings_sc(s, k) = max(i, t_total_matchings_sc(s, i))));
+							
+							t_alignment_c(c_actv)
+							:= t_alignment_sc(first(s | ord(s) = ord(c_actv)));
+							
+							t_alignment_substring_c(c_actv)
+							:= Substring(string_c(c_actv), t_alignment_c(c_actv), t_alignment_c(c_actv) + m - 1);
+							
+							t_total_matchings_c(c_actv)
+							:= t_total_matchings_sc(first(s | ord(s) = ord(c_actv)), first(k | ord(k) = t_alignment_c(c_actv)));
+							
+							t_total_mismatchings_c(c_actv)
+							:= m -t_total_matchings_c(c_actv);
+							
+							t1_dc := m - min(c_actv,  t_total_matchings_c(c_actv));
+							endblock;
+							
+							
+							block !SF
+							t_matching_sf(s, k, i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m
+							:= 1 $ (t_symbol_target_string(i) = symbol_sf(s, (k + (val(i) - 1))));
+							
+							t_total_matchings_sf(s, k) | s <= card(Sf_Active) and k <= active_string_size_sf(s)
+							:= sum(i | i <= m,  t_matching_sf(s, k, i));
+							
+							t_alignment_substring_f(f_actv, k)
+							:= Substring(string_f(f_actv), val(k), val(k) + m -1);
+							
+							t_total_matchings_f(f_actv, k)
+							:= t_total_matchings_sf(first(s | ord(s) = ord(f_actv)), k);
+							
+							t1_df := m - max((f_actv, k), t_total_matchings_f(f_actv, k));
+							
+							t_total_mismatchings_f(f_actv, k)
+							:= m - t_total_matchings_f(f_actv, k);
+							endblock;
+							
+							t1_dc_df := t1_dc - t1_df;
+						}
+						ElementParameter aux {
+							Range: Indexes;
+						}
+						Set dialog_actions;
+					}
+				}
+				Section VNS_T2 {
+					DeclarationSection vns_target_string_2 {
+						StringParameter t2_string;
+						StringParameter t2_symbol_target_string {
+							IndexDomain: i;
+							Property: NoSave;
+						}
+						Parameter t2_matching_sc {
+							IndexDomain: (s,k,i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m;
+							Range: binary;
+							Property: NoSave;
+						}
+						Parameter t2_matching_sf {
+							IndexDomain: (s,k,i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m;
+							Range: binary;
+							Property: NoSave;
+						}
+						Parameter t2_total_matchings_sc {
+							IndexDomain: (s,k) | s <= card(Sc_Active) and k <= active_string_size_sc(s);
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t2_total_matchings_sf {
+							IndexDomain: (s,k) | s <= card(Sf_Active) and k <= active_string_size_sf(s);
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t2_alignment_sc {
+							IndexDomain: s;
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t2_alignment_c {
+							IndexDomain: c_actv;
+							Range: integer;
+							Property: NoSave;
+						}
+						StringParameter t2_alignment_substring_c {
+							IndexDomain: c_actv;
+						}
+						StringParameter t2_alignment_substring_f {
+							IndexDomain: (f_actv, k) | k <= StringLength(string_f(first(Sf_Active)));
+						}
+						Parameter t2_total_matchings_c {
+							IndexDomain: c_actv;
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t2_total_mismatchings_c {
+							IndexDomain: c_actv;
+						}
+						Parameter t2_total_matchings_f {
+							IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+							Range: integer;
+							Default: maxint;
+							Property: NoSave;
+						}
+						Parameter t2_total_mismatchings_f {
+							IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+							Range: integer;
+							Default: maxint;
+							Property: NoSave;
+						}
+						Parameter t2_dc {
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t2_df {
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t2_dc_df {
+							Default: maxint;
+						}
+					}
+					Procedure Run_VNS_T2 {
+						Body: {
+							empty t2_symbol_target_string,
+							        t2_matching_sc,
+							        t2_matching_sf,
+							        t2_total_matchings_sc,
+							        t2_total_matchings_sf,
+							        t2_alignment_sc,
+							        t2_alignment_c,
+							        t2_alignment_substring_c,
+							        t2_alignment_substring_f,
+							        t2_total_matchings_c,
+							        t2_total_mismatchings_c,
+							        t2_total_matchings_f,
+							        t2_total_mismatchings_f,
+							        t2_dc,
+							        t2_df;
+							
+							block !SC
+							t2_symbol_target_string(i) := Substring(t2_string, i, i);
+							
+							t2_matching_sc(s, k, i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m
+							:= 1 $ (t2_symbol_target_string(i) = symbol_sc(s, (k + (val(i) - 1))));
+							
+							t2_total_matchings_sc(s, k) | s <= card(Sc_Active) and k <= active_string_size_sc(s)
+							:= sum(i | i <= m,  t2_matching_sc(s, k, i));
+							
+							t2_alignment_sc(s) | s <= card(Sc_Active)
+							:= val(first(k | t2_total_matchings_sc(s, k) = max(i, t2_total_matchings_sc(s, i))));
+							
+							t2_alignment_c(c_actv)
+							:= t2_alignment_sc(first(s | ord(s) = ord(c_actv)));
+							
+							t2_alignment_substring_c(c_actv)
+							:= Substring(string_c(c_actv), t2_alignment_c(c_actv), t2_alignment_c(c_actv) + m - 1);
+							
+							t2_total_matchings_c(c_actv)
+							:= t2_total_matchings_sc(first(s | ord(s) = ord(c_actv)), first(k | ord(k) = t2_alignment_c(c_actv)));
+							
+							t2_total_mismatchings_c(c_actv)
+							:= m -t2_total_matchings_c(c_actv);
+							
+							t2_dc := m - min(c_actv,  t2_total_matchings_c(c_actv));
+							endblock;
+							
+							
+							block !SF
+							t2_matching_sf(s, k, i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m
+							:= 1 $ (t2_symbol_target_string(i) = symbol_sf(s, (k + (val(i) - 1))));
+							
+							t2_total_matchings_sf(s, k) | s <= card(Sf_Active) and k <= active_string_size_sf(s)
+							:= sum(i | i <= m,  t2_matching_sf(s, k, i));
+							
+							t2_alignment_substring_f(f_actv, k)
+							:= Substring(string_f(f_actv), val(k), val(k) + m -1);
+							
+							t2_total_matchings_f(f_actv, k)
+							:= t2_total_matchings_sf(first(s | ord(s) = ord(f_actv)), k);
+							
+							t2_df := m - max((f_actv, k), t2_total_matchings_f(f_actv, k));
+							
+							t2_total_mismatchings_f(f_actv, k)
+							:= m - t2_total_matchings_f(f_actv, k);
+							endblock;
+							
+							t2_dc_df := t2_dc - t2_df;
+						}
+						ElementParameter aux {
+							Range: Indexes;
+						}
+						Set dialog_actions;
+					}
+				}
+				Section VNS_T3 {
+					DeclarationSection vns_target_string_3 {
+						StringParameter t3_string;
+						StringParameter t3_symbol_target_string {
+							IndexDomain: i;
+							Property: NoSave;
+						}
+						Parameter t3_matching_sc {
+							IndexDomain: (s,k,i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m;
+							Range: binary;
+							Property: NoSave;
+						}
+						Parameter t3_matching_sf {
+							IndexDomain: (s,k,i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m;
+							Range: binary;
+							Property: NoSave;
+						}
+						Parameter t3_total_matchings_sc {
+							IndexDomain: (s,k) | s <= card(Sc_Active) and k <= active_string_size_sc(s);
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t3_total_matchings_sf {
+							IndexDomain: (s,k) | s <= card(Sf_Active) and k <= active_string_size_sf(s);
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t3_alignment_sc {
+							IndexDomain: s;
+							Range: integer;
+							Property: NoSave;
+						}
+						Parameter t3_alignment_c {
+							IndexDomain: c_actv;
+							Range: integer;
+							Property: NoSave;
+						}
+						StringParameter t3_alignment_substring_c {
+							IndexDomain: c_actv;
+						}
+						StringParameter t3_alignment_substring_f {
+							IndexDomain: (f_actv, k) | k <= StringLength(string_f(first(Sf_Active)));
+						}
+						Parameter t3_total_matchings_c {
+							IndexDomain: c_actv;
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t3_total_mismatchings_c {
+							IndexDomain: c_actv;
+						}
+						Parameter t3_total_matchings_f {
+							IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+							Range: integer;
+							Default: maxint;
+							Property: NoSave;
+						}
+						Parameter t3_total_mismatchings_f {
+							IndexDomain: (f_actv,k) | k <= StringLength(string_f(first(Sf_Active)));
+							Range: integer;
+							Default: maxint;
+							Property: NoSave;
+						}
+						Parameter t3_dc {
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t3_df {
+							Range: integer;
+							Default: maxint;
+						}
+						Parameter t3_dc_df {
+							Default: maxint;
+						}
+					}
+					Procedure Run_VNS_T3 {
+						Body: {
+							empty t3_symbol_target_string,
+							        t3_matching_sc,
+							        t3_matching_sf,
+							        t3_total_matchings_sc,
+							        t3_total_matchings_sf,
+							        t3_alignment_sc,
+							        t3_alignment_c,
+							        t3_alignment_substring_c,
+							        t3_alignment_substring_f,
+							        t3_total_matchings_c,
+							        t3_total_mismatchings_c,
+							        t3_total_matchings_f,
+							        t3_total_mismatchings_f,
+							        t3_dc,
+							        t3_df;
+							
+							block !SC
+							t3_symbol_target_string(i) := Substring(t3_string, i, i);
+							
+							t3_matching_sc(s, k, i) | s <= card(Sc_Active) and k <= active_string_size_sc(s) and i <=m
+							:= 1 $ (t3_symbol_target_string(i) = symbol_sc(s, (k + (val(i) - 1))));
+							
+							t3_total_matchings_sc(s, k) | s <= card(Sc_Active) and k <= active_string_size_sc(s)
+							:= sum(i | i <= m,  t3_matching_sc(s, k, i));
+							
+							t3_alignment_sc(s) | s <= card(Sc_Active)
+							:= val(first(k | t3_total_matchings_sc(s, k) = max(i, t3_total_matchings_sc(s, i))));
+							
+							t3_alignment_c(c_actv)
+							:= t3_alignment_sc(first(s | ord(s) = ord(c_actv)));
+							
+							t3_alignment_substring_c(c_actv)
+							:= Substring(string_c(c_actv), t3_alignment_c(c_actv), t3_alignment_c(c_actv) + m - 1);
+							
+							t3_total_matchings_c(c_actv)
+							:= t3_total_matchings_sc(first(s | ord(s) = ord(c_actv)), first(k | ord(k) = t3_alignment_c(c_actv)));
+							
+							t3_total_mismatchings_c(c_actv)
+							:= m -t3_total_matchings_c(c_actv);
+							
+							t3_dc := m - min(c_actv,  t3_total_matchings_c(c_actv));
+							endblock;
+							
+							
+							block !SF
+							t3_matching_sf(s, k, i) | s <= card(Sf_Active) and k <= active_string_size_sf(s) and i <=m
+							:= 1 $ (t3_symbol_target_string(i) = symbol_sf(s, (k + (val(i) - 1))));
+							
+							t3_total_matchings_sf(s, k) | s <= card(Sf_Active) and k <= active_string_size_sf(s)
+							:= sum(i | i <= m,  t3_matching_sf(s, k, i));
+							
+							t3_alignment_substring_f(f_actv, k)
+							:= Substring(string_f(f_actv), val(k), val(k) + m -1);
+							
+							t3_total_matchings_f(f_actv, k)
+							:= t3_total_matchings_sf(first(s | ord(s) = ord(f_actv)), k);
+							
+							t3_df := m - max((f_actv, k), t3_total_matchings_f(f_actv, k));
+							
+							t3_total_mismatchings_f(f_actv, k)
+							:= m - t3_total_matchings_f(f_actv, k);
+							endblock;
+							
+							t3_dc_df := t3_dc - t3_df;
+						}
+						ElementParameter aux {
+							Range: Indexes;
+						}
+						Set dialog_actions;
+					}
+				}
+				Procedure NeighbourhoodChange {
+					Body: {
+						Run_VNS_T1;
+						Run_VNS_T2;
+						
+						if t2_dc_df < t1_dc_df then
+						    t1_string := t2_string;
+						    Run_VNS_T1;
+						    Kn := first(Neighbourhoods);
+						else
+						    if (ord(Kn) = card(Neighbourhoods)) then
+						        Kn := '';
+						    else
+						        kn += 1;
+						    endif;
+						endif;
+					}
+				}
+				Procedure FirstImprovement {
+					Body: {
+						loc_start_time := stopwatch::fnc_elapsed();
+						
+						while loc_run_time - loc_start_time < time_limit_improvement do
+						    r := floor(uniform(1, m+1));
+						    empty N;
+						    N := {j | val(j) <= alphabetSize
+						            and x(r, j) >= min_n(Kn)
+						            and x(r, j) <= max_n(Kn)};
+						
+						    if card(N) = 0 then
+						        N := {j | x(r, j) = min(k, x(r, k))};
+						    endif;
+						    size_n := card(N);
+						    r2 := floor(uniform(1, size_n+1));
+						    symbol := formatString("%e", first(sy_n | ord(sy_n) = r2));
+						    t3_string := Substring(t2_string, 1, r-1) 
+						            + formatString("%e", first(a | ord(a) = r2)) 
+						            + Substring(t2_string, r+1, StringLength(t2_string)); 
+						
+						    loc_run_time := stopwatch::fnc_elapsed();
+						
+						    Run_VNS_T3;  
+						    if t3_dc_df < t2_dc_df then
+						        t2_string := t3_string;
+						        break;
+						    endif;     
+						endwhile;
+					}
+					Parameter loc_run_time {
+						Unit: s;
+					}
+					Parameter loc_start_time {
+						Unit: s;
+					}
+					Parameter r;
+					Parameter r2;
+					Parameter size_n;
+					StringParameter symbol;
+					Set N {
+						SubsetOf: Indexes;
+						Index: sy_n;
+					}
+				}
+				Procedure Shaking {
+					Body: {
+						if first_exec = 1 then
+						    first_exec := 0;
+						    return;
+						endif;
+						
+						cont := 0;
+						S := {1..m};
+						
+						while cont < max_shaking_positions do
+						    r := floor(uniform(1, card(S)+1));
+						    pe_loc_s := first(loc_s | ord(loc_s) = r);
+						
+						    loc_current_symbol := SubString(t1_string, r, r);
+						
+						    L := {1 .. alphabetSize};
+						    L := {L - first(loc_l | formatString("%e", (first(Alphabet) + (val(loc_l) - 1))) = loc_current_symbol )};
+						    r2 := floor(uniform(1, card(L)+1));
+						    pe_loc_l := first(L) + (r2-1);
+						
+						    t2_string := Substring(t2_string, 1, r-1)
+						            + formatString("%e", first(a | ord(a) = val(pe_loc_l)))
+						            + Substring(t2_string, r+1, m);
+						
+						    S := {S - pe_loc_s};
+						    cont += 1;
+						endwhile;
+					}
+					Parameter r;
+					Parameter r2;
+					Parameter cont;
+					StringParameter loc_current_symbol;
+					Set S {
+						Index: loc_s;
+						Parameter: pe_loc_s;
+					}
+					Set L {
+						Index: loc_l;
+						Parameter: pe_loc_l;
+					}
+				}
+				Procedure InitializeT2String {
+					Body: {
+						if t2_dc_df > t1_dc_df then
+						    t2_string := t1_string;
+						elseif t2_dc_df = t1_dc_df then
+						    r := floor(uniform(1, 3));
+						    if r = 2 then
+						        t2_string := t1_string;
+						    endif;
+						endif;
+					}
+					Parameter r;
+				}
+				Section LPBN_VNS {
+					Parameter enabled_lpbn_vns {
+						Range: binary;
+						Property: NoSave;
+						Definition: {
+							1 $ (strategy('(ILPBN-VNS) ILP-based neighbourhoods') = 1
+							        or strategy('(ILPBS-VNS) ILP-based search') = 1)
+						}
+					}
+					Procedure Algorithm_ILPBN_VNS {
+						Body: {
+							stopwatch::pr_start();
+							solve F2;
+							
+							target_string := "";
+							for i | val(i) <= m do
+							    loc_j := first(j | x(i, j) = max(k, x(i, k)));
+							    target_string += formatString("%e", first(Alphabet) + (val(loc_j) -1));
+							endfor;
+							
+							empty Neighbourhoods;
+							cleanup Neighbourhoods;
+							cleandependents Neighbourhoods;
+							
+							Neighbourhoods := {1 .. n_size};
+							
+							loc_run_time := stopwatch::fnc_elapsed();
+							
+							t1_string := target_string;
+							Run_VNS_T1;
+							first_exec := 1;
+							
+							while loc_run_time < time_limit_lpbn_vns do
+							    Kn := first(Neighbourhoods);
+							    InitializeT2String;
+							    Shaking;
+							    Run_VNS_T2;
+							
+							    while nondefault(Kn)
+							            and loc_run_time < time_limit_lpbn_vns do
+							        FirstImprovement;
+							        NeighbourhoodChange;
+							        loc_run_time := stopwatch::fnc_elapsed();
+							    endwhile;
+							endwhile;
+							
+							
+							target_string := t1_string;
+							
+							
+							
+							!---  Captura informações da solução ----------------------------------------
+							solver_status := F2.SolverStatus;
+							model_status := F2.ProgramStatus;
+							number_of_constraints := F2.NumberOfConstraints;
+							number_of_integer_variables := F2.NumberOfIntegerVariables;
+							number_of_linear_variables :=  F2.NumberOfVariables - number_of_integer_variables;
+							number_of_non_zeros := F2.NumberOfNonzeros;
+							final_gap := abs(1 - (F2.Objective /$ F2.bestbound));
+							objective_function := F2.bestbound;
+						}
+						Parameter loc_run_time {
+							Unit: s;
+						}
+						ElementParameter loc_j {
+							Range: Indexes;
+						}
+						ElementParameter loc_i {
+							Range: Indexes;
+						}
+					}
+				}
+				Section LPBS_VNS {
+					Procedure LPImprovement {
+						Body: {
+							loc_start_time := stopwatch::fnc_elapsed();
+							
+							while loc_run_time - loc_start_time < time_limit_improvement do
+							    r := floor(uniform(1, m+1));
+							    empty N;
+							    N := {j | val(j) <= alphabetSize
+							            and x(r, j) >= min_n(Kn)
+							            and x(r, j) <= max_n(Kn)};
+							
+							    if card(N) = 0 then
+							        N := {j | x(r, j) = min(k, x(r, k))};
+							    endif;
+							    size_n := card(N);
+							    r2 := floor(uniform(1, size_n+1));
+							    symbol := formatString("%e", first(sy_n | ord(sy_n) = r2));
+							    t3_string := Substring(t2_string, 1, r-1) 
+							            + formatString("%e", first(a | ord(a) = r2)) 
+							            + Substring(t2_string, r+1, StringLength(t2_string)); 
+							
+							    loc_run_time := stopwatch::fnc_elapsed();
+							
+							    Run_VNS_T3;  
+							    if t3_dc_df < t2_dc_df then
+							        t2_string := t3_string;
+							        break;
+							    endif;     
+							endwhile;
+						}
+						Parameter loc_run_time {
+							Unit: s;
+						}
+						Parameter loc_start_time {
+							Unit: s;
+						}
+						Parameter r;
+						Parameter r2;
+						Parameter size_n;
+						StringParameter symbol;
+						Set N {
+							Index: sy_n;
+						}
+					}
+					Procedure LpShaking {
+						Body: {
+							if first_exec = 1 then
+							    first_exec := 0;
+							    return;
+							endif;
+							
+							cont := 0;
+							S := {1..m};
+							
+							while cont < max_shaking_positions do
+							    r := floor(uniform(1, card(S)+1));
+							    pe_loc_s := first(loc_s | ord(loc_s) = r);
+							
+							    loc_current_symbol := SubString(t1_string, r, r);
+							
+							    L := {1 .. alphabetSize};
+							    L := {L - first(loc_l | formatString("%e", (first(Alphabet) + (val(loc_l) - 1))) = loc_current_symbol )};
+							    r2 := floor(uniform(1, card(L)+1));
+							    pe_loc_l := first(L) + (r2-1);
+							
+							    MM_fix(first(i | ord(i) = r), first(j | ord(j) = r2))
+							    := 1.0;
+							
+							    S := {S - pe_loc_s};
+							    cont += 1;
+							endwhile;
+							Algorithm_RA;
+							t2_string := target_string;
+						}
+						Parameter r;
+						Parameter r2;
+						Parameter cont;
+						StringParameter loc_current_symbol;
+						Set S {
+							Index: loc_s;
+							Parameter: pe_loc_s;
+						}
+						Set L {
+							Index: loc_l;
+							Parameter: pe_loc_l;
+						}
+					}
+					Procedure Algorithm_ILPBS_VNS {
+						Body: {
+							stopwatch::pr_start();
+							solve F2;
+							
+							target_string := "";
+							for i | val(i) <= m do
+							    loc_j := first(j | x(i, j) = max(k, x(i, k)));
+							    target_string += formatString("%e", first(Alphabet) + (val(loc_j) -1));
+							endfor;
+							
+							empty Neighbourhoods;
+							cleanup Neighbourhoods;
+							cleandependents Neighbourhoods;
+							
+							Neighbourhoods := {1 .. n_size};
+							
+							loc_run_time := stopwatch::fnc_elapsed();
+							
+							t1_string := target_string;
+							empty vns_target_string_2, vns_target_string_3;
+							Run_VNS_T1;
+							first_exec := 1;
+							
+							while loc_run_time < time_limit_lpbn_vns do
+							    Kn := first(Neighbourhoods);
+							    InitializeT2String;
+							    LpShaking;
+							    Run_VNS_T2;
+							
+							    while nondefault(Kn)
+							            and loc_run_time < time_limit_lpbn_vns do
+							        FirstImprovement;
+							        NeighbourhoodChange;
+							        loc_run_time := stopwatch::fnc_elapsed();
+							    endwhile;
+							endwhile;
+							
+							
+							target_string := t1_string;
+							
+							
+							
+							!---  Captura informações da solução ----------------------------------------
+							solver_status := F2.SolverStatus;
+							model_status := F2.ProgramStatus;
+							number_of_constraints := F2.NumberOfConstraints;
+							number_of_integer_variables := F2.NumberOfIntegerVariables;
+							number_of_linear_variables :=  F2.NumberOfVariables - number_of_integer_variables;
+							number_of_non_zeros := F2.NumberOfNonzeros;
+							final_gap := abs(1 - (F2.Objective /$ F2.bestbound));
+							objective_function := F2.bestbound;
+						}
+						Parameter loc_run_time {
+							Unit: s;
+						}
+						ElementParameter loc_j {
+							Range: Indexes;
+						}
+						ElementParameter loc_i {
+							Range: Indexes;
+						}
+					}
 				}
 			}
 			Procedure RunStrategy {
@@ -1378,6 +2250,10 @@ Model Main_DSSSP {
 					    Algorithm_RA;
 					elseif strategy('(B&B) Exact') then
 					    Algorithm_BBExact;
+					elseif strategy('(ILPBN-VNS) ILP-based neighbourhoods') then
+					    Algorithm_ILPBN_VNS;
+					elseif strategy('(ILPBS-VNS) ILP-based search') then
+					    Algorithm_ILPBS_VNS;
 					endif;
 				}
 			}
@@ -1439,6 +2315,8 @@ Model Main_DSSSP {
 			}
 			Procedure ConfigureProblem {
 				Body: {
+					empty MM_fix;
+					
 					if problem('(CSP) Closest String Problem') then
 					    ConfigureCSP;
 					elseif problem('(CSSP) Closest Substring Problem') then
