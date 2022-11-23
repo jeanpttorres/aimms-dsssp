@@ -46,3 +46,11 @@ TO-DO
 * Choose the Input Step and click "+" on the button "Upload TXT". Choose the file located on data/text_input_example.dssp and, after uploading it, click on the button again in order to process the file. 
 
 * Choose the Optimization step and click on the "PLAY" button, on the bottom-right corner. 
+
+# References
+
+[1] Torres, J.P.T., Hoshino, E.A. LP-based heuristics for the distinguishing string and substring selection problems. Ann Oper Res 316, 1205–1234 (2022). https://doi.org/10.1007/s10479-021-04138-5
+
+[2] https://github.com/jeanpttorres/dssp
+
+[3] https://github.com/jeanpttorres/aimms-dsssp
