@@ -41,6 +41,40 @@ TO-DO
 
 * The system should open on your browser
 
+## Instance Files
+
+There is the option to load an instance file through the page "Input". A sample file can be found at "data/text_input_example.dssp", but the file expects the following structure:
+
+```
+n
+c f
+m
+kc kf
+a(1)
+..
+a(n)
+sc(1)
+sc(2)
+...
+sc(kc)
+sf(1)
+sf(2)
+...
+sf(kf)
+```
+
+Where n, c, f, m, kc and kf are integers and their meaning is indicated below:
+
+- n: alphabet size
+- c: Sc's cardinality
+- f: Sf's cardinality
+- m: length of the target string
+- kc: parameter used for refining the distances between target string and strings within the Sc set
+- kf: parameter used for refining the distances between target string and strings within the Sf set
+
+The values read for a(1) .. a(n) are the symbols (characteres) from the Alphabet.
+The string in 'Sc' should be writen in sequence, one in each line. The same structure applies for `Sf`, informed right after the last `Sc` sequence.
+
 # Dummy Execution
 
 * Choose the Input Step and click "+" on the button "Upload TXT". Choose the file located on data/text_input_example.dssp and, after uploading it, click on the button again in order to process the file. 
